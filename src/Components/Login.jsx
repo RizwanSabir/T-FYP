@@ -60,7 +60,7 @@ const Login = () => {
 
                   </a>
 
-                  <h2 className="mt-3 ">Don't have an account <a className="underline" href="SignUp">Sign up</a></h2>
+                  <h2 className="mt-3 ">Don't have an account <a className="underline" href="/SignUp">Sign up</a></h2>
                 </div>
               </div>
 
