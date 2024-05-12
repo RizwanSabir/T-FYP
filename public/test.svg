@@ -1,0 +1,17 @@
+    <svg viewBox="0 0 447 96" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:anim="http://www.w3.org/2000/anim" anim="" anim:transform-origin="50% 50%" anim:duration="1" anim:ease="ease-in-out">
+    <g id="Rectangle 2" filter="url(#filter0_d_50_1051)">
+        <rect x="52" y="22" width="343" height="63" rx="31.5" fill="#FB773F"></rect>
+        <rect x="51" y="21" width="345" height="65" rx="32.5" stroke="white" stroke-opacity="0.8" stroke-width="2"></rect>
+    </g>
+    <defs>
+        <filter id="filter0_d_50_1051" x="0" y="0" width="447" height="167" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+            <feFlood flood-opacity="0" result="BackgroundImageFix"></feFlood>
+            <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"></feColorMatrix>
+            <feOffset dy="30"></feOffset>
+            <feGaussianBlur stdDeviation="25"></feGaussianBlur>
+            <feColorMatrix type="matrix" values="0 0 0 0 0.658333 0 0 0 0 0.0877778 0 0 0 0 0.293178 0 0 0 0.15 0"></feColorMatrix>
+            <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_50_1051"></feBlend>
+            <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_50_1051" result="shape"></feBlend>
+        </filter>
+    </defs>
+</svg>
