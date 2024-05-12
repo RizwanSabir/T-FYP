@@ -1,8 +1,7 @@
 import LoginSignNav from "./LoginSignNav"
-
-const SignUp
-  = () => {
-    // border-2 border-red-500
+import { useState } from "react"
+const SignUp = () => {
+  let [User, setUser] = useState(['Brand','SignUpBrandPage1'])
     return (
       <>
         <img src="LogoSite.svg" className="absolute top-1 left-0" alt="Logo" />
@@ -23,7 +22,7 @@ const SignUp
 
 
 
-                <LoginSignNav />
+              <LoginSignNav User={User} setUser={setUser} />
 
 
 
@@ -63,7 +62,7 @@ const SignUp
 
                     </a>
 
-                    <h2 className="mt-3 ">Already have an account? <a className="underline" href="/Login">Login</a></h2>
+                    <h2 className="mt-3 ">Already have an account? <a className="underline" href="/">Login</a></h2>
                   </div>
                 </div>
 

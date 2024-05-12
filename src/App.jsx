@@ -7,20 +7,25 @@ import VerifyEmail from "./Components/VerifyEmail"
 import ForgetPassword from "./Components/ForgetPassword"
 import SignUpInfluencerPage1 from "./Components/Influencer/SignUpinfluencerPage1"
 import VerifyInfluencerAccount from "./Components/Influencer/VerifyInfluencerAccount"
+// import Testings from "./Components/Testings"
+import BrandDashboard from "./Components/Brand/BrandDashboard"
 
 
 const App = () => {
   return (
   <>
   <Routes>
-    <Route path="/" element={<Login/>} />
     <Route path="/SignUp" element={<SignUp/>}/>
+    <Route path="/"  element={<Login/>} />
+    <Route  element={<Login/>} />
     <Route path="/SignUpBrand" element={<SignUpBrand2/>}/>
     <Route path="/SignUpBrandPage1" element={<SignUpBrandPage1/>}/>
     <Route path="/VerifyEmail" element={<VerifyEmail/>}/>
     <Route path="/ForgetPassword" element={<ForgetPassword/>}/>
     <Route path="/SignUpInfluencerPage1" element={<SignUpInfluencerPage1/>}/>
-    <Route path="VerifyInfluencerAccount" element={<VerifyInfluencerAccount/>}/>
+    <Route path="/VerifyInfluencerAccount" element={<VerifyInfluencerAccount/>}/>
+    {/* <Route path="/Testings" element={<Testings/>}/> */}
+    <Route path="/BrandDashboard" element={<BrandDashboard/>}/>
 
 
 

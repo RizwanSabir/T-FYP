@@ -21,9 +21,9 @@ const VerifyInfluencerAccount = () => {
   </div>
       <img src="QRCode.svg" className="w-full h-[200px]"  alt="" />
 
-      <a href="/" className=" mt-4 block flex flex-row  w-[400px] justify-center bgColor p-2  py-3 rounded-3xl ">
+      <a href="https://www.instagram.com" target="_blank" className=" mt-4 block flex flex-row  w-[400px] justify-center bgColor p-2  py-3 rounded-3xl ">
   
- <div className="flex flex-row justify-between gap-2">
+ <div href=""  className="flex flex-row justify-between gap-2">
 
 
   <button  className="  poppins-regular  text-white"> Open Post </button>

@@ -86,7 +86,7 @@ const SignUpinfluencerPage1
  
 
  
-<a href="/SignUpBrand" className=" mt-4  flex flex-row  justify-center bgColor p-2 rounded-3xl ">
+<a href="/VerifyInfluencerAccount" className=" mt-4  flex flex-row  justify-center bgColor p-2 rounded-3xl ">
   
  
   <button   className="  poppins-regular "> Next </button>

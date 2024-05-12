@@ -66,9 +66,14 @@ const InputField = () => {
 
       </div>
 
-      <div className=" mt-4  flex flex-row  justify-center bgColor p-2 rounded-3xl ">
-        <button className="  poppins-regular "> Next </button>
-      </div>
+      <a href="/BrandDashboard" className=" mt-4  flex flex-row  justify-center bgColor p-2 rounded-3xl ">
+
+
+<button className="  poppins-regular "> Next </button>
+
+
+</a>
+
 
       <div>
 

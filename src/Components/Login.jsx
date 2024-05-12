@@ -1,7 +1,11 @@
+import { useState } from "react"
 import LoginSignNav from "./LoginSignNav"
 
 const Login = () => {
-  // border-2 border-red-500
+
+
+  let [User, setUser] = useState(['Brand','SignUpBrandPage1'])
+
   return (
     <>
       <img src="LogoSite.svg" className="absolute top-1 left-0" alt="Logo" />
@@ -22,7 +26,7 @@ const Login = () => {
 
 
 
-              <LoginSignNav />
+              <LoginSignNav User={User} setUser={setUser} />
 
 
 
@@ -52,10 +56,10 @@ const Login = () => {
                   <h1 className="text-right underline"><a href="/ForgetPassword">Forget Passowrd</a></h1>
 
 
-                  <a href="/" className=" mt-4 block flex flex-row  w-32 justify-center bgColor p-2  py-3 rounded-3xl ">
+                  <a href={`/${User[1]}`} className=" mt-4 block flex flex-row  w-32 justify-center bgColor p-2  py-3 rounded-3xl ">
 
 
-                    <button className="  poppins-regular "> Login </button>
+                    <button  className="  poppins-regular "> Login </button>
 
 
                   </a>
@@ -81,7 +85,15 @@ const Login = () => {
 }
 
 
-
+const LoginButton = (User) => {
+   
+ switch(User){
+  case 'Brand': //redirect to /BrandPage
+  case 'Influencer': //redirect to /BrandPage
+  case 'User': //redirect to /BrandPage
+ }
+  
+}
 
 
 
@@ -96,6 +108,7 @@ const InputField = () => {
   )
 }
 
-
+// let users = [['Brand','SignUpBrandPage1'], ['Influencer','SignUpinfluencerPage1'], ['User','SignUpUserPage1']]
+  
 
 export default Login
