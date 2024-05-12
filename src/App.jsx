@@ -9,6 +9,8 @@ import SignUpInfluencerPage1 from "./Components/Influencer/SignUpinfluencerPage1
 import VerifyInfluencerAccount from "./Components/Influencer/VerifyInfluencerAccount"
 // import Testings from "./Components/Testings"
 import BrandDashboard from "./Components/Brand/BrandDashboard"
+import InfluencerDashboard from "./Components/Influencer/InfluencerDashboard"
+import UserDashboard from "./Components/User/UserDashboard"
 
 
 const App = () => {
@@ -24,7 +26,9 @@ const App = () => {
     <Route path="/ForgetPassword" element={<ForgetPassword/>}/>
     <Route path="/SignUpInfluencerPage1" element={<SignUpInfluencerPage1/>}/>
     <Route path="/VerifyInfluencerAccount" element={<VerifyInfluencerAccount/>}/>
-    {/* <Route path="/Testings" element={<Testings/>}/> */}
+    <Route path="/InfluencerDashboard" element={<InfluencerDashboard/>}/>
+    <Route path="/UserDashboard" element={<UserDashboard/>}/>
+    {/* <Route path="/" element={<Testings/>}/> */}
     <Route path="/BrandDashboard" element={<BrandDashboard/>}/>
 
 

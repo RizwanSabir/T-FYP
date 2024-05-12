@@ -54,7 +54,7 @@ const SignUp = () => {
 
               
 
-                    <a href="/" className=" mt-4 block flex flex-row  w-32 justify-center bgColor p-2  py-3 rounded-3xl ">
+                    <a href={`/${User[1]}`} className=" mt-4 block flex flex-row  w-32 justify-center bgColor p-2  py-3 rounded-3xl ">
 
 
                       <button className="  poppins-regular "> Sign Up </button>
