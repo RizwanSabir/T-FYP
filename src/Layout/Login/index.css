@@ -1,0 +1,40 @@
+.backgroundPicture{
+/* Rectangle 4 */
+
+
+background: linear-gradient(218.21deg, #5038ED -3.5%, #FB773F 53.35%);
+
+
+}
+
+
+
+
+background: url(.png), linear-gradient(218.21deg, #5038ED -3.5%, #FB773F 53.35%);
+
+
+
+.glassDiv{
+    background: rgba( 255, 255, 255, 0.3 );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 11px );
+-webkit-backdrop-filter: blur( 11px );
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+
+
+/* Rectangle 4 */
+
+.bgSignUp{
+   /* Rectangle 4 */
+
+
+
+
+
+background: linear-gradient(218.21deg, #5038ED -3.5%, #FB773F 53.35%);
+}
+
+
