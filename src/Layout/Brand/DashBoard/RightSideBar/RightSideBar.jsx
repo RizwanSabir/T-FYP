@@ -36,7 +36,7 @@ const InboxMessages = ({ image, name, time, message, unread = 0 }) => {
           </div>
           <div className='flex justify-between text-sm text-black/70 text-[12px]'>
             <p>{message}</p>
-            {unread ? <p className='bg-black px-2 text-white  flex items-center rounded-full  text-[10px]'>{unread}</p> : ""}
+            {unread ? <p className='bg-primary/90 px-2 text-white  flex items-center rounded-full  text-[10px]'>{unread}</p> : ""}
           </div>
         </div>
       </div>

@@ -11,7 +11,7 @@ const LeftSideBar = () => {
 
 
 
-
+  const [isHover, setisHover] = useState(-1)
 
   const [activeButton, setactiveButton] = useState(0)
   return (
@@ -28,7 +28,13 @@ const LeftSideBar = () => {
 
             <div className='  '>   {/* Contains the Buttons of Left Side Bar */}
 
-              <div onClick={() => { setactiveButton(5) }} className={`size-[30px] rounded-xl   grid place-items-center bg-gray-200/90         hover:outline-none hover:ring-2 hover:ring-ring hover:ring-offset-2  ${activeButton === 5 ? 'Button' : ''}`}>   {/* Search Icon  */}
+              <div onClick={() => { setactiveButton(5) }}    onMouseEnter={() => {
+           setisHover(0)
+         }}
+         onMouseLeave={() => {
+           setisHover(-1)
+         }} className={`size-[30px] rounded-xl   grid place-items-center bg-gray-200/90         hover:outline-none hover:ring-2 hover:ring-ring hover:ring-offset-2  ${activeButton === 5 ? 'Button' : ''} relative`}>   {/* Search Icon  */}
+                {isHover===0? <div className=' absolute w-[120px] right-[-135px] text-center border-[2px] rounded-lg  border-red-400 Button'>Search</div>:""}
                 <img src="Svg/SearchIcon.svg" alt="" />
               </div>
 
@@ -39,7 +45,17 @@ const LeftSideBar = () => {
             </div>
           </div>
 
-          <div onClick={() => { setactiveButton(6) }} className={`size-[30px] rounded-xl    grid place-items-center bg-gray-200/90         hover:outline-none hover:ring-2 hover:ring-ring hover:ring-offset-2 mb-2 ${activeButton == 6 ? 'Button' : ''}`}>      {/* Info Icon  */}
+          <div
+          onMouseEnter={() => {
+            setisHover(1)
+          }}
+          onMouseLeave={() => {
+            setisHover(-1)
+          }}
+          
+          onClick={() => { setactiveButton(6) }} className={`size-[30px] rounded-xl    grid place-items-center bg-gray-200/90         hover:outline-none hover:ring-2 hover:ring-ring hover:ring-offset-2 mb-2 ${activeButton == 6 ? 'Button' : ''} relative`}>      {/* Info Icon  */}
+           
+           {isHover===1? <div className=' absolute w-[120px] right-[-135px] text-center border-[2px] rounded-lg  border-red-400 Button'>Help</div>:""}
             <img src="Svg/Help.svg" alt="" />
           </div>
 
