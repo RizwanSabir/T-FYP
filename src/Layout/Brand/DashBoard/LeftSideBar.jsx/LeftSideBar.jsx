@@ -4,7 +4,7 @@ import { useState } from 'react';
 import './Index.css';
 import Logo from '../../../../Components/Logo/Logo';
 
-const LeftSideBar = () => {
+const LeftSideBar = ({setActivePage}) => {
 
 
   let IconNames = [['HomeIcon','Dashboard'], ['Compaign','Compaign'], ['Saved','Your Network'], ['Group','Group'], ['message','Message']]
@@ -28,7 +28,7 @@ const LeftSideBar = () => {
 
             <div className='  '>   {/* Contains the Buttons of Left Side Bar */}
 
-              <div onClick={() => { setactiveButton(5) }}    onMouseEnter={() => {
+              <div onClick={() => { setactiveButton(5);setActivePage(0) }}    onMouseEnter={() => {
            setisHover(0)
          }}
          onMouseLeave={() => {
@@ -39,7 +39,7 @@ const LeftSideBar = () => {
               </div>
 
               <div className=' mt-10 flex flex-col gap-4'> {/* Other's Icon  */}
-                <SideBarIcons setactiveButton={setactiveButton} names={IconNames} active={activeButton} />
+                <SideBarIcons  setActivePage={setActivePage} setactiveButton={setactiveButton} names={IconNames} active={activeButton} />
               </div>
 
             </div>
@@ -53,7 +53,7 @@ const LeftSideBar = () => {
             setisHover(-1)
           }}
           
-          onClick={() => { setactiveButton(6) }} className={`size-[30px] rounded-xl    grid place-items-center bg-gray-200/90         hover:outline-none hover:ring-2 hover:ring-ring hover:ring-offset-2 mb-2 ${activeButton == 6 ? 'Button' : ''} relative`}>      {/* Info Icon  */}
+          onClick={() => { setactiveButton(6);setActivePage(7) }} className={`size-[30px] rounded-xl    grid place-items-center bg-gray-200/90         hover:outline-none hover:ring-2 hover:ring-ring hover:ring-offset-2 mb-2 ${activeButton == 6 ? 'Button' : ''} relative`}>      {/* Info Icon  */}
            
            {isHover===1? <div className=' absolute w-[120px] right-[-135px] text-center border-[2px] rounded-lg  border-red-400 Button'>Help</div>:""}
             <img src="Svg/Help.svg" alt="" />
@@ -66,7 +66,7 @@ const LeftSideBar = () => {
 }
 
 
-const SideBarIcons = ({ names, active, setactiveButton }) => {
+const SideBarIcons = ({ names, active, setactiveButton,setActivePage }) => {
 
 
   const [isHover, setisHover] = useState(-1)
@@ -83,7 +83,7 @@ const SideBarIcons = ({ names, active, setactiveButton }) => {
            setisHover(-1)
          }}
         
-        onClick={() => { setactiveButton(i) }} className={`size-[30px] rounded-xl    grid place-items-center bg-gray-200/90         hover:outline-none hover:ring-2 hover:ring-ring hover:ring-offset-2  ${i === active ? 'Button' : ''}   relative`}>
+        onClick={() => { setactiveButton(i);setActivePage(i+2) }} className={`size-[30px] rounded-xl    grid place-items-center bg-gray-200/90         hover:outline-none hover:ring-2 hover:ring-ring hover:ring-offset-2  ${i === active ? 'Button' : ''}   relative`}>
           {isHover===i? <div className=' absolute w-[120px] right-[-135px] text-center border-[2px] rounded-lg  border-red-400 Button'>{v[1]}</div>:""}
           <img   src={`Svg/${v[0]}.svg`} alt="" />
 

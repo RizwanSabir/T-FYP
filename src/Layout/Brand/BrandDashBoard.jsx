@@ -9,13 +9,13 @@ const BrandDashBoard = () => {
 
   const [SideBar, setSideBar] = useState(false)
 
-
+const [ActivePage, setActivePage] = useState(2)
 
   return (
     <>
       <div className='flex      h-screen' >
 
-        <LeftSideBar />
+        <LeftSideBar  setActivePage={setActivePage} />
 
         <div className='w-full  '>
 
@@ -24,7 +24,7 @@ const BrandDashBoard = () => {
           <TopHeader SideBar={SideBar} setSideBar={setSideBar}/>   {/* DashBoard Top Heading i.e Dashboard with __-__-__ hanbuger sign  */}
 
           <div className='grid grid-cols-12  w-full h-full'>     {/* Dashboard  Top Header Bottom Two Components  */}
-            <div className=' col-span-12   lg:col-span-9 '><MainBar /></div>
+            <div className=' col-span-12   lg:col-span-9 '><MainBar ActivePage={ActivePage} /></div>
             <div className=' col-span-3 mx-5 hidden lg:block'><RightSideBar /></div>
           </div>
 
