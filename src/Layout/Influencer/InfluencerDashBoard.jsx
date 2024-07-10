@@ -1,16 +1,16 @@
 import { useState } from 'react'
-import MainBar from './DashBoard/MainBar.jsx/MainBar'
-import RightSideBar from './DashBoard/RightSideBar/RightSideBar'
-import LeftSideBar from './DashBoard/LeftSideBar.jsx/LeftSideBar';
-import HiddenSideBar from './DashBoard/HiddenSideBar';
-import TopHeader from './DashBoard/TopHeader';
+import MainBar from '../../Components/DashBoard/MainBar.jsx/MainBar'
+import RightSideBar from '../../Components/DashBoard/RightSideBar/RightSideBar'
+import LeftSideBar from '../../Components/DashBoard/LeftSideBar.jsx/LeftSideBar';
+import HiddenSideBar from '../../Components/DashBoard/HiddenSideBar';
+import TopHeader from '../../Components/DashBoard/TopHeader';
 
-const BrandDashBoard = () => {
+const InfluencerDashBoard = () => {
 
   const [SideBar, setSideBar] = useState(false)
 
 
-
+  
   return (
     <>
       <div className='flex      h-screen' >
@@ -37,4 +37,4 @@ const BrandDashBoard = () => {
   )
 }
 
-export default BrandDashBoard
+export default InfluencerDashBoard

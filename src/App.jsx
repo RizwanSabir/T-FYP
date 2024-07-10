@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react'
 import SplashScreen from './Layout/SplashScreen'
 import Login from './Layout/Login/Login'
 import BrandDashBoard from './Layout/Brand/BrandDashBoard'
+import InfluencerDashBoard from './Layout/Influencer/InfluencerDashBoard'
 
 const App = () => {
  
@@ -22,6 +23,7 @@ const App = () => {
 {/* {AnimationState ?   <SplashScreen/>:<Login/>} */}
 
 <BrandDashBoard/>
+{/* <InfluencerDashBoard/> */}
   
 {/* <Login/> */}
 
