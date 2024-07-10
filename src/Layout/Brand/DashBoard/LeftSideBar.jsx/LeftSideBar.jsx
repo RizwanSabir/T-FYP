@@ -74,7 +74,7 @@ const SideBarIcons = ({ names, active, setactiveButton }) => {
 
     {names.map((v, i) => {
 
-      return (<>
+      return (
         <div key={i}
          onMouseEnter={() => {
            setisHover(i)
@@ -85,11 +85,11 @@ const SideBarIcons = ({ names, active, setactiveButton }) => {
         
         onClick={() => { setactiveButton(i) }} className={`size-[30px] rounded-xl    grid place-items-center bg-gray-200/90         hover:outline-none hover:ring-2 hover:ring-ring hover:ring-offset-2  ${i === active ? 'Button' : ''}   relative`}>
           {isHover===i? <div className=' absolute w-[120px] right-[-135px] text-center border-[2px] rounded-lg  border-red-400 Button'>{v[1]}</div>:""}
-          <img src={`Svg/${v[0]}.svg`} alt="" />
+          <img   src={`Svg/${v[0]}.svg`} alt="" />
 
         </div>
 
-      </>)
+      )
     })}
 
   </>)
