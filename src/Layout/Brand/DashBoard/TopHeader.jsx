@@ -1,7 +1,7 @@
 import React from 'react'
 import { motion, MotionConfig } from 'framer-motion';
 
-const TopHeader = ({SideBar,setSideBar}) => {
+const TopHeader = ({ActivePage,SideBar,setSideBar}) => {
 
   
   let HandBurger = `h-1 rounded-full  w-[30px] my-1  ${SideBar ? 'bg-white' : 'bg-black'}`
@@ -24,7 +24,7 @@ const TopHeader = ({SideBar,setSideBar}) => {
                 </MotionConfig>
 
 
-                <p>DashBoard</p></div>
+                <p>{ActivePage}</p></div>
 
               <div className='flex   justify-between w-[100px]'>
                 <img src="Svg/Notification.svg" alt="" />

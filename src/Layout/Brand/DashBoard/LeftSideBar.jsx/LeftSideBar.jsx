@@ -43,7 +43,7 @@ const LeftSideBar = ({ setActivePage }) => {
           </div>
 
           <div
-            onMouseEnter={() => { setisHover(1) }} onMouseLeave={() => { setisHover(-1) }} onClick={() => { setactiveButton(6); setActivePage(7) }} className={`size-[30px] rounded-xl    grid place-items-center bg-gray-200/90         hover:outline-none hover:ring-2 hover:ring-ring hover:ring-offset-2 mb-2 ${activeButton == 6 ? 'Button' : ''} relative`}>      {/* Info Icon  */}
+            onMouseEnter={() => { setisHover(1) }} onMouseLeave={() => { setisHover(-1) }} onClick={() => { setactiveButton(6); setActivePage(6) }} className={`size-[30px] rounded-xl    grid place-items-center bg-gray-200/90         hover:outline-none hover:ring-2 hover:ring-ring hover:ring-offset-2 mb-2 ${activeButton == 6 ? 'Button' : ''} relative`}>      {/* Info Icon  */}
 
             {isHover === 1 ? <div className=' absolute w-[120px] right-[-135px] text-center border-[2px] rounded-lg  border-red-400 Button'>Help</div> : ""}
             <img src="Svg/Help.svg" alt="" />
@@ -66,7 +66,7 @@ const SideBarIcons = ({ names, active, setactiveButton, setActivePage }) => {
 
       return (
         <div key={i}
-          onMouseEnter={() => { setisHover(i) }} onMouseLeave={() => { setisHover(-1) }} onClick={() => { setactiveButton(i); setActivePage(i + 2) }} className={`size-[30px] rounded-xl    grid place-items-center bg-gray-200/90         hover:outline-none hover:ring-2 hover:ring-ring hover:ring-offset-2  ${i === active ? 'Button' : ''}   relative`}>
+          onMouseEnter={() => { setisHover(i) }} onMouseLeave={() => { setisHover(-1) }} onClick={() => { setactiveButton(i); setActivePage(i +1) }} className={`size-[30px] rounded-xl    grid place-items-center bg-gray-200/90         hover:outline-none hover:ring-2 hover:ring-ring hover:ring-offset-2  ${i === active ? 'Button' : ''}   relative`}>
           {isHover === i ? <div className=' absolute w-[120px] right-[-135px] text-center border-[2px] rounded-lg  border-red-400 Button'>{v[1]}</div> : ""}
           <img src={`Svg/${v[0]}.svg`} alt="" />
 

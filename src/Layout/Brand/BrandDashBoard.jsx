@@ -9,7 +9,9 @@ const BrandDashBoard = () => {
 
   const [SideBar, setSideBar] = useState(false)
 
-const [ActivePage, setActivePage] = useState(2)
+const [ActivePage, setActivePage] = useState(1)
+let Pages=['Search','Home','Compaign','Your Network','Groups','Message','Help']
+
 
   return (
     <>
@@ -21,10 +23,10 @@ const [ActivePage, setActivePage] = useState(2)
 
           <HiddenSideBar SideBar={SideBar} />   {/* Side Bar that is visible on Click */}
          
-          <TopHeader SideBar={SideBar} setSideBar={setSideBar}/>   {/* DashBoard Top Heading i.e Dashboard with __-__-__ hanbuger sign  */}
+          <TopHeader  ActivePage={Pages[ActivePage]} SideBar={SideBar} setSideBar={setSideBar}/>   {/* DashBoard Top Heading i.e Dashboard with __-__-__ hanbuger sign  */}
 
           <div className='grid grid-cols-12  w-full h-full'>     {/* Dashboard  Top Header Bottom Two Components  */}
-            <div className=' col-span-12   lg:col-span-9 '><MainBar ActivePage={ActivePage} /></div>
+            <div className=' col-span-12   lg:col-span-9 '><MainBar ActivePage={Pages[ActivePage]} /></div>
             <div className=' col-span-3 mx-5 hidden lg:block'><RightSideBar /></div>
           </div>
 
