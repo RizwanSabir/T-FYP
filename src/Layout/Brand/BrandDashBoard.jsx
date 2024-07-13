@@ -9,28 +9,38 @@ const BrandDashBoard = () => {
 
   const [SideBar, setSideBar] = useState(false)
 
-const [ActivePage, setActivePage] = useState(1)
-let Pages=['Search','Home','Compaign','Your Network','Groups','Message','Help']
+
+
+
 
 
   return (
     <>
-      <div className='flex      h-screen' >
+      <div  >
 
-        <LeftSideBar  setActivePage={setActivePage} />
+        <div className='flex      h-screen'>
+          {/* Left Side Bar Showing the Home Search ... and other Icons  */}
+          <LeftSideBar />
 
-        <div className='w-full  '>
+          <div className='w-full  '>
+            {/* Side Bar that is visible on Click */}
+            <HiddenSideBar SideBar={SideBar} />
 
-          <HiddenSideBar SideBar={SideBar} />   {/* Side Bar that is visible on Click */}
-         
-          <TopHeader  ActivePage={Pages[ActivePage]} SideBar={SideBar} setSideBar={setSideBar}/>   {/* DashBoard Top Heading i.e Dashboard with __-__-__ hanbuger sign  */}
+            {/* DashBoard Top Heading i.e Dashboard with __-__-__ hanbuger sign  */
+            /* As Hamburger Sign is on Header and we want to toggle it , that's is why we 
+          passed the state varibles to Hidden and top header */}
+            <TopHeader SideBar={SideBar} setSideBar={setSideBar} />
 
-          <div className='grid grid-cols-12  w-full h-full'>     {/* Dashboard  Top Header Bottom Two Components  */}
-            <div className=' col-span-12   lg:col-span-9 '><MainBar ActivePage={Pages[ActivePage]} /></div>
-            <div className=' col-span-3 mx-5 hidden lg:block'><RightSideBar /></div>
+            {/* Dashboard  Top Header Bottom Two Components  */}
+            {/* Not passing any State because they are using the Location Hooks for the Path  */}
+            <div className='grid grid-cols-12  w-full h-full'>
+              <div className=' col-span-12   lg:col-span-9 '><MainBar /></div>
+              <div className=' col-span-3 mx-5 hidden lg:block'><RightSideBar /></div>
+            </div>
+
           </div>
-
         </div>
+
 
       </div>
 

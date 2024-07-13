@@ -3,6 +3,8 @@ import SplashScreen from './Layout/SplashScreen'
 import Login from './Layout/Login/Login'
 import BrandDashBoard from './Layout/Brand/BrandDashBoard'
 import InfluencerDashBoard from './Layout/Influencer/InfluencerDashBoard'
+import { BrowserRouter } from 'react-router-dom';
+import BrandRoutes from './Layout/Brand/BrandRoutes'
 
 const App = () => {
  
@@ -20,13 +22,16 @@ const App = () => {
   return (
   
   <>
+<BrowserRouter>
 
 {/* {AnimationState ?   <SplashScreen/>:<Login/>} */}
 
-<BrandDashBoard/>
+<BrandRoutes/>
 {/* <InfluencerDashBoard/> */}
   
 {/* <Login/> */}
+</BrowserRouter>
+
 
 
   </>
