@@ -24,7 +24,7 @@ const BrandDashBoard = () => {
 
           <div className='w-full  '>
             {/* Side Bar that is visible on Click */}
-            <HiddenSideBar SideBar={SideBar} />
+            <HiddenSideBar SideBar={SideBar} setSideBar={setSideBar} />
 
             {/* DashBoard Top Heading i.e Dashboard with __-__-__ hanbuger sign  */
             /* As Hamburger Sign is on Header and we want to toggle it , that's is why we 

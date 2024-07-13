@@ -1,12 +1,12 @@
-import { Router, Routes,Route } from 'react-router-dom';
+import { Routes,Route } from 'react-router-dom';
 import  './Index.css';
 import Home from '../Pages/Home/Home';
 import Search from '../Pages/Search/Search';
-import Compaign from '../Pages/Compaign/Compaign';
 import Saved from '../Pages/Saved/Saved';
 import Group from '../Pages/Group/Group';
 import Message from '../Pages/Message/Message';
 import Info from '../Pages/Info/Info';
+import Compaign from '../Pages/Compaign/Compaign';
 const MainBar = () => {
   return (
     <>
