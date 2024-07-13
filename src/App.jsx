@@ -8,15 +8,15 @@ import BrandRoutes from './Layout/Brand/BrandRoutes'
 
 const App = () => {
  
-  // const TimeOutAnimation = useRef()
+  const TimeOutAnimation = useRef()
 
-  // const [AnimationState, setAnimationState] = useState(true)
+  const [AnimationState, setAnimationState] = useState(true)
 
-  // useEffect(() => {
-  //    let  TimeOutAnimation=setTimeout(() => {
-  //     setAnimationState(false)
-  //    },8000)
-  // })
+  useEffect(() => {
+     let  TimeOutAnimation=setTimeout(() => {
+      setAnimationState(false)
+     },8000)
+  })
 
 
   return (
@@ -24,9 +24,9 @@ const App = () => {
   <>
 <BrowserRouter>
 
-{/* {AnimationState ?   <SplashScreen/>:<Login/>} */}
+{AnimationState ?   <SplashScreen/>:<BrandRoutes/>}
 
-<BrandRoutes/>
+{/* <BrandRoutes/> */}
 {/* <InfluencerDashBoard/> */}
   
 {/* <Login/> */}
