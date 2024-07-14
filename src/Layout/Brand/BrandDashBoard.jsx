@@ -1,49 +1,68 @@
-import { useState } from 'react'
-import MainBar from './DashBoard/MainBar.jsx/MainBar'
-import RightSideBar from './DashBoard/RightSideBar/RightSideBar'
-import LeftSideBar from './DashBoard/LeftSideBar.jsx/LeftSideBar';
-import HiddenSideBar from './DashBoard/HiddenSideBar';
-import TopHeader from './DashBoard/TopHeader';
+import {  useMemo } from 'react'
+// import MainBar from './DashBoard/MainBar.jsx/MainBar'
+// import LeftSideBar from '../../Components/DashBoardTemplate/DashBoard/LeftSideBar.jsx/LeftSideBar';
+// import RightSideBar from '../../Components/DashBoardTemplate/DashBoard/RightSideBar/RightSideBar';
+// import TopHeader from '../../Components/DashBoardTemplate/DashBoard/TopHeader';
+
+import BrandDashBoardTemplate  from '../../Components/DashBoardTemplate/DashBoardBoardTemplate';
+import HomeIcon from '../../Components/Svg/HomeIcon';
+import CompaignIcon from '../../Components/Svg/CompaignIcon';
+import SavedIcon from '../../Components/Svg/SavedIcon';
+import GroupIcon from '../../Components/Svg/Group';
+import Message from '../../Components/Svg/Messages';
+import HelpIcon from '../../Components/Svg/Help';
+import SearchIcon from '../../Components/Svg/SearchIcon';
+import MainBar from './DashBoard/MainBar.jsx/MainBar';
+
 
 const BrandDashBoard = () => {
 
-  const [SideBar, setSideBar] = useState(false)
+// const navigate=useNavigate()
+//   useEffect(() => {
+//     navigate('/DashBoard')
+  
+  
+//   }, [])
+
+  // We used the Usememo Hook  to store these objects as they are being passed to Component and i donot
+  // want to render the component because the  object reference changes on each render
+  let DashBoardData = useMemo(() => {
+
+    // If You donot pass the Custom Buttons You have to do the {CustomButtons &&} to not add thoes buttons 
+    let CustomButtons = [{ "name": "Search", "link": "/Search", "ImageSrc": "Svg/SearchIcon.svg" },
+    { "name": "Info", "link": "/Info", "ImageSrc": "Svg/Help.svg" }]
+
+    // Used to display the Icon and Its name on Hover and when Click address
+    //name ,image,link 
+    let IconNames = [['HomeIcon', 'Dashboard', '/Dashboard'], ['Compaign', 'Compaign', 'Compaign'], ['Saved', 'Your Network', 'Saved'], ['Group', 'Group', 'Group'], ['message', 'Message', 'Message']]
+
+    // It will navigate the page upon the user itself add URL orr by navigate funtion when user Click 
+    // It will the Active Button according to 0,1,2,3,4,5,6
+    let Pages = ['/Dashboard', '/Compaign', '/Saved', '/Group', '/Message', '/Search', '/Info']
 
 
+    let menuItems = [
+      { icon: <SearchIcon color="white" />, label: 'Search', navigate: "/Search" },
+      { icon: <HomeIcon color="white" />, label: 'Dashboard', navigate: "/Dashboard" },
+      { icon: <CompaignIcon color="white" />, label: 'Compaign', navigate: "/Compaign" },
+      { icon: <SavedIcon color="white" />, label: 'Saved Network', navigate: "/Saved" },
+      { icon: <GroupIcon color="white" />, label: 'Group', navigate: "/Group" },
+      { icon: <Message color="white" />, label: 'Message', navigate: "/Message" },
+      { icon: <HelpIcon color="white" />, label: 'Help', navigate: "/Info" },
+    ];
 
+    return { CustomButtons, IconNames, Pages, menuItems }
+  }, [])
 
 
 
   return (
     <>
-      <div  >
+      <BrandDashBoardTemplate  CustomButtons={DashBoardData.CustomButtons} IconNames={DashBoardData.IconNames}  Pages={DashBoardData.Pages} menuItems={DashBoardData.menuItems} >
+      {/* // we pass the main bar as the children that contains the /Home /Search Routes and pages  */}
+      <MainBar/>
 
-        <div className='flex      h-screen'>
-          {/* Left Side Bar Showing the Home Search ... and other Icons  */}
-          <LeftSideBar />
-
-          <div className='w-full  '>
-            {/* Side Bar that is visible on Click */}
-            <HiddenSideBar SideBar={SideBar} setSideBar={setSideBar} />
-
-            {/* DashBoard Top Heading i.e Dashboard with __-__-__ hanbuger sign  */
-            /* As Hamburger Sign is on Header and we want to toggle it , that's is why we 
-          passed the state varibles to Hidden and top header */}
-            <TopHeader SideBar={SideBar} setSideBar={setSideBar} />
-
-            {/* Dashboard  Top Header Bottom Two Components  */}
-            {/* Not passing any State because they are using the Location Hooks for the Path  */}
-            <div className='grid grid-cols-12  w-full h-full'>
-              <div className=' col-span-12   lg:col-span-9 '><MainBar /></div>
-              <div className=' col-span-3 mx-5 hidden lg:block'><RightSideBar /></div>
-            </div>
-
-          </div>
-        </div>
-
-
-      </div>
-
+      </BrandDashBoardTemplate>
 
     </>
   )

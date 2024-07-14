@@ -1,10 +1,7 @@
-import React, { useEffect, useRef, useState } from 'react'
-import SplashScreen from './Layout/SplashScreen'
-import Login from './Layout/Login/Login'
-import BrandDashBoard from './Layout/Brand/BrandDashBoard'
-import InfluencerDashBoard from './Layout/Influencer/InfluencerDashBoard'
 import { BrowserRouter } from 'react-router-dom';
 import BrandRoutes from './Layout/Brand/BrandRoutes'
+import SplashScreen from './Layout/SplashScreen';
+import {useRef,useState,useEffect} from 'react';
 
 const App = () => {
  

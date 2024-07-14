@@ -2,14 +2,14 @@ import { useLayoutEffect, useState } from 'react'
 import { motion, MotionConfig } from 'framer-motion';
 import { useLocation } from 'react-router-dom';
 
-const TopHeader = ({ SideBar, setSideBar }) => {
+const TopHeader = ({ SideBar, setSideBar,Pages }) => {
 
   //WE are using the useLocation Hook to determine th ecurrent Location and 
 
   const [Page, setPage] = useState('Home')
   const location = useLocation();
 
-  let Pages = ['/Home', '/Compaign', '/Saved', '/Group', '/Message', '/Search', '/Info']
+
   //Removing the / from the Pages so that i can display the Correct Name
   let PageNames = Pages.map(path => path.substring(1));
 
@@ -21,8 +21,8 @@ const TopHeader = ({ SideBar, setSideBar }) => {
   useLayoutEffect(() => {
     let IndexPage = Pages.indexOf(location.pathname)
 
-    if (location.pathname === '/') {
-      setPage('Home')
+    if (location.pathname.includes('/Dashboard')||location.pathname.includes('/')) {
+      setPage('Dashboard')
     } else {
       setPage(PageNames[IndexPage])
     }
