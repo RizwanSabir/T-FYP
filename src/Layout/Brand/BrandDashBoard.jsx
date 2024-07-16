@@ -29,8 +29,8 @@ const BrandDashBoard = () => {
   let DashBoardData = useMemo(() => {
 
     // If You donot pass the Custom Buttons You have to do the {CustomButtons &&} to not add thoes buttons 
-    let CustomButtons = [{ "name": "Search", "link": "/Search", "ImageSrc": "Svg/SearchIcon.svg" },
-    { "name": "Info", "link": "/Info", "ImageSrc": "Svg/Help.svg" }]
+    let CustomButtons = [{ "name": "Search", "link": "/Search", "ImageSrc": "/Svg/SearchIcon.svg" },
+    { "name": "Info", "link": "/Info", "ImageSrc": "/Svg/Help.svg" }]
 
     // Used to display the Icon and Its name on Hover and when Click address
     //name ,image,link 

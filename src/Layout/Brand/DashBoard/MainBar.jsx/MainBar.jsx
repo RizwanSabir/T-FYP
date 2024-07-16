@@ -12,8 +12,10 @@ import Info from '../Pages/Info/Info';
 import ErrorPage from '../Pages/ErrorPage/ErrorPage';
 import Spendings from '../Pages/Home/Spendings';
 import Influencers from '../Pages/Home/Influencers';
-import Media from '../Pages/Home/Media';
 import OverView from '../Pages/Home/OverView';
+import Engagement from '../Pages/Home/Engagement';
+import EngagementGrowth from '../Pages/Home/EngagementGrowth';
+import Media from '../Pages/Home/Media';
 
 const MainBar = () => {
   return (
@@ -25,7 +27,7 @@ const MainBar = () => {
           <Route path="OverView"  element={< OverView/>} />
           <Route path="Engagement" element={<Engagement />} />
           <Route path="Spendings" element={<Spendings />} />
-          <Route path="Audience" element={<Audience />} />
+          <Route path="Audience" element={<EngagementGrowth />} />
           <Route path="Influencers" element={<Influencers />} />
           <Route path="Media" element={<Media />} />
         </Route>
@@ -41,16 +43,6 @@ const MainBar = () => {
   );
 };
 
-const Overview = () => {
-  return <div>I am in Overview</div>;
-};
 
-const Engagement = () => {
-  return <div>I am in Engagement</div>;
-};
-
-const Audience = () => {
-  return <div>I am in Audience</div>;
-};
 
 export default MainBar;

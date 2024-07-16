@@ -28,7 +28,7 @@ const InboxMessages = ({ image, name, time, message, unread = 0 }) => {
     <>
       <div className=' flex  my-4'>
 
-        <img className='size-[35px] Avatar' src={`Media/${image}.jpg`} alt="" />
+        <img className='size-[35px] Avatar' src={`/Media/${image}.jpg`} alt="" />
         <div className=' flex flex-1 flex-col  ml-2'>
           <div className='flex flex-1 justify-between  items-center'>
             <p className='poppins-semibold text-sm'>{name}</p>

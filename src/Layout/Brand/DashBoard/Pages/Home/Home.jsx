@@ -26,6 +26,8 @@ useEffect(() => {
         <div className="navBgColor hidden xs:flex rounded-full xs:py-2 xs:px-2 sm:flex-nowrap md:px-10 lg:gap-x-4">
           <NavItems items={navItems} />
         </div>
+
+        {/* //This will display on sm screen only  */}
         <div className="xs:hidden">
           <Dropdown items={navItems} />
         </div>
@@ -81,7 +83,7 @@ const Dropdown = ({ items }) => {
         <div>{isOpen[1]}</div>
         <DropdownSvg />
       </div>
-      {isOpen[0] && (
+      {isOpen[0] ? (
         <ul className="poppins-regular flex gap-y-2 flex-col mt-2">
           {items.map((item, index) =>
             isOpen[1] !== item ? (
@@ -91,7 +93,7 @@ const Dropdown = ({ items }) => {
             ) : null
           )}
         </ul>
-      )}
+      ):""}
     </div>
   );
 };

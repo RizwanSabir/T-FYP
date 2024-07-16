@@ -256,6 +256,11 @@
   border-radius: 9999px;
   object-position: top center;
 }
+.ProfileMedia{
+  object-fit: cover;
+
+  object-position: top center;
+}
 
 
 .borderRed{

@@ -53,7 +53,7 @@ const LeftSideBar = ({CustomButtons,IconNames,Pages}) => {
 
   return (
     <>
-      <div className='  hidden  md:flex md:justify-center   md:border-r-2 '>
+      <div className='  hidden  md:flex md:justify-center   md:border-r-2  '>
 
         <div className=' w-[50px]   flex flex-col items-center  justify-between  h-screen'>
           {/* Setting the Width - Height of Container  */}
@@ -125,7 +125,7 @@ const SideBarIcons = ({ names, active, HandleClick }) => {
 
           {isHover === i ? <div className=' absolute w-[120px] right-[-135px] text-center border-[2px] rounded-lg  border-red-400 Button z-40'>{v[1]}</div> : ""}
 
-          <img src={`Svg/${v[0]}.svg`} alt="" />
+          <img src={`/Svg/${v[0]}.svg`} alt="" />
 
         </div>
 

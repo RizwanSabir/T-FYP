@@ -61,8 +61,8 @@ const TopHeader = ({ SideBar, setSideBar,Pages }) => {
           {/* Profile picture and Notification Icon are Displayed Here  */}
           
           <div className='flex   justify-between w-[100px]'>
-            <img src="Svg/Notification.svg" alt="" />
-            <img className='size-[45px]   Avatar' src="Media/p1.jpg" alt="" />
+            <img src="/Svg/Notification.svg" alt="" />
+            <img className='size-[45px]   Avatar' src="/Media/p1.jpg" alt="" />
           </div>
 
         </div>
