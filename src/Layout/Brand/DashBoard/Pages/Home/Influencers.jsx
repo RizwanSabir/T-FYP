@@ -52,7 +52,7 @@ const Influencers = () => {
 
             <div className="mt-6 ">
 
-<div className="mt-2 grid gap-x-5  md:grid-cols-4 md:grid-rows-1   justify-center items-center">
+<div className="mt-2 grid gap-x-5  gap-y-5 xs:grid-cols-2 xs:grid-rows-1 sm:gap-y-5  md:grid-cols-4 md:grid-rows-1   justify-center items-center">
  <SimpleCard name="Paid" price="11"/>
  <SimpleCard name="Posts" price="12"/>
  <SimpleCard name="Invited" price="20"/>

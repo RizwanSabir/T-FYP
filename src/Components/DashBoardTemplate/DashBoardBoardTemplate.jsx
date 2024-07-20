@@ -1,15 +1,18 @@
-import { useState, useMemo } from 'react'
+import { useState, useMemo, useContext} from 'react'
 import LeftSideBar from './DashBoard/LeftSideBar.jsx/LeftSideBar';
 import RightSideBar from './DashBoard/RightSideBar/RightSideBar';
 import TopHeader from './DashBoard/TopHeader';
-import MainBar from '../../Layout/Brand/DashBoard/MainBar.jsx/MainBar';
 
 import HiddenSideBar from './DashBoard/HiddenSideBar';
+import { MyContext } from '../../Hooks/Context/ShowInboxContext';
+import MiddlePart from './DashBoard/MainBar.jsx/MiddlePart';
 
+import ShowInbox from '../../Hooks/ShowInbox';
 
 const BrandDashBoardTemplate = ({ CustomButtons, IconNames, Pages, menuItems,children }) => {
 
   const [SideBar, setSideBar] = useState(false)
+
 
   // We used the Usememo Hook  to store these objects as they are being passed to Component and i donot
   // want to render the component because the  object reference changes on each render
@@ -19,8 +22,6 @@ const BrandDashBoardTemplate = ({ CustomButtons, IconNames, Pages, menuItems,chi
 
     return { CustomButtons, IconNames, Pages, menuItems }
   }, [])
-
-
 
   return (
     <>
@@ -43,11 +44,14 @@ const BrandDashBoardTemplate = ({ CustomButtons, IconNames, Pages, menuItems,chi
 
             {/* Dashboard  Top Header Bottom Two Components  */}
             {/* Not passing any State because they are using the Location Hooks for the Path  */}
-            <div className='grid grid-cols-12  w-full h-full'>
-              {/* //Here the main Data will be displayed Like /home /Search ... */}
-              <div className=' col-span-12   lg:col-span-9 '>{children}</div>
-              <div className=' col-span-3 mx-5 hidden lg:block'><RightSideBar /></div>
-            </div>
+
+
+{/* Whether to show the Inbox or not Like in /Search we donot want to show the Inbox  */}
+            <ShowInbox>
+
+           <MiddlePart>{children}</MiddlePart>
+
+            </ShowInbox>
 
           </div>
         </div>

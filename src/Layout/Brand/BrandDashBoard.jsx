@@ -4,6 +4,8 @@ import {  useMemo } from 'react'
 // import RightSideBar from '../../Components/DashBoardTemplate/DashBoard/RightSideBar/RightSideBar';
 // import TopHeader from '../../Components/DashBoardTemplate/DashBoard/TopHeader';
 
+
+
 import BrandDashBoardTemplate  from '../../Components/DashBoardTemplate/DashBoardBoardTemplate';
 import HomeIcon from '../../Components/Svg/HomeIcon';
 import CompaignIcon from '../../Components/Svg/CompaignIcon';
@@ -23,6 +25,8 @@ const BrandDashBoard = () => {
   
   
 //   }, [])
+
+console.log("Brand changes in bradn");
 
   // We used the Usememo Hook  to store these objects as they are being passed to Component and i donot
   // want to render the component because the  object reference changes on each render

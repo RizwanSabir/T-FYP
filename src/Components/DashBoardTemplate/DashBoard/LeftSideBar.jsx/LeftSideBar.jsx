@@ -29,8 +29,6 @@ const LeftSideBar = ({CustomButtons,IconNames,Pages}) => {
   
   // Get the Index and set the Active button accordingly 
   let IndexPage = Pages.indexOf(location.pathname)
-  console.log("yes it is include"+activeButton);
-  console.log("active button is"+IndexPage);
   //Change the Layout before its paint to the User screen ....that why used the layout not the UseEffect
   useLayoutEffect(() => {
     

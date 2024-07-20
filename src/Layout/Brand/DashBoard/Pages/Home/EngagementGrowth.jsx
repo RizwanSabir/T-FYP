@@ -37,8 +37,10 @@ const EngagementGrowth = () => {
       </div>
           
 
-              <div className="  h-[150px] w-full mdm:h-[220px] mt-7" >
-              <SimpleLineChart/>
+              <div className="  h-[150px] overflow-scroll  md:w-full mdm:h-[220px] mt-7     scroll-container" >
+            <div className="w-[900px] h-full  md:w-full">
+            <SimpleLineChart/>
+            </div>
               </div>
 
             </div>

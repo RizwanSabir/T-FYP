@@ -37,8 +37,11 @@ const Engagement = () => {
 </div>
 
 </div>
-<div className="w-full h-[200px]">
+<div className="w-full h-[200px] overflow-scroll  scroll-container ">
+<div className=" w-[900px] h-full  md:w-full">
+
 <SimpleBarChart/>
+  </div>
 </div>
 
 </div>
