@@ -27,7 +27,7 @@ const Search = () => {
     <>
       {/* Container or margin from side */}
       <div className="pt-10 ">
-        <div className="h-[20px] bg-red-500  xs:bg-orange-500  sm:bg-green-500 md:bg-blue-500 bg-red-500 w-full "></div>
+        <div className="h-[20px]  w-full "></div>
 
         <p className="lato-bold md:text-xl md:text-center">
           Search from the Worlds <span style={{ color: "#FB773F" }} className="defaultTextColor">Largest Database </span>of Influencer
