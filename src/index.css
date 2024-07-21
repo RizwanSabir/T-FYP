@@ -253,9 +253,19 @@
 .OrangeButtonWithText{
   @apply  rounded-2xl px-4 py-1 text-white lato-regular  bg-primary hover:bg-white hover:text-primary hover:border-primary hover:border-[1px]
 }
-.SilverButtonWithText{
-  @apply border-[1px] lato-regular  rounded-2xl px-3 py-1  hover:text-primary hover:border-primary
+
+.filters {
+  
+   @apply rounded-2xl px-4 py-[5px]  text-primary border-primary border-[1px]
 }
+
+.SilverButtonWithText{
+  border-color: rgb(83, 63, 63,80%);
+  @apply border-[1px] lato-regular   rounded-2xl px-3 py-1  hover:text-primary hover:border-primary
+  
+}
+
+
 
 .inputField{
   @apply flex h-10 w-full  border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50
@@ -264,6 +274,12 @@
 .Button{
   @apply bg-primary text-primary-foreground hover:bg-primary/90
 }
+
+
+.OverViewBox2{
+  box-shadow: 9px 34px 70px 0px rgba(0,0,0,0.25);
+}
+
 
 .Avatar{
   object-fit: cover;

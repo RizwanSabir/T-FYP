@@ -26,7 +26,7 @@ const BrandDashBoard = () => {
   
 //   }, [])
 
-console.log("Brand changes in bradn");
+
 
   // We used the Usememo Hook  to store these objects as they are being passed to Component and i donot
   // want to render the component because the  object reference changes on each render

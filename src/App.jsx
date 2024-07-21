@@ -21,9 +21,9 @@ const App = () => {
   <>
 <BrowserRouter>
 
-{AnimationState ?   <SplashScreen/>:<BrandRoutes/>}
+{/* {AnimationState ?   <SplashScreen/>:<BrandRoutes/>} */}
 
-{/* <BrandRoutes/> */}
+<BrandRoutes/>
 {/* <InfluencerDashBoard/> */}
   
 {/* <Login/> */}
