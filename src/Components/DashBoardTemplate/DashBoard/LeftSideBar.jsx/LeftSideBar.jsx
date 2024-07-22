@@ -7,35 +7,43 @@ import { useNavigate } from 'react-router-dom';
 
 
 
-const LeftSideBar = ({CustomButtons,IconNames,Pages}) => {
+const LeftSideBar = ({CustomButtons,IconNames,Pages,activeButton,setactiveButton}) => {
 
   //Set  the State of hover on button Hover 
   //Search and Info has different Hover State variable in there respective Component Class
 
   const [isHover, setisHover] = useState(-1)
+  
 
   // let Pages = ['/Home', '/Compaign', '/Saved', '/Groups', '/Message', '/Search', '/Help']
   // It will the Active Button according to 0,1,2,3,4,5,6
-  const [activeButton, setactiveButton] = useState(0)
-
-  
-  
- 
 
   // Used for Link when user click on any Button of side Bar 
   const navigate = useNavigate();
 
- 
+   // Get the index and set the active button accordingly
+   const getIndexPage = (pathname) => {
+    const pathParts = pathname.split('/');
+    // Use the first part after splitting by '/' that is not empty
+    const relevantPath = `/${pathParts[1]}`;
+    console.log("revlant path is "+relevantPath);
+    return Pages.indexOf(relevantPath);
+  };
+ // Get the Index and set the Active button accordingly 
+  let IndexPage = getIndexPage(location.pathname);
   
-  // Get the Index and set the Active button accordingly 
-  let IndexPage = Pages.indexOf(location.pathname)
+ 
   //Change the Layout before its paint to the User screen ....that why used the layout not the UseEffect
+
+  // also i have to used it because let take an example user search for /search but when the component mounts it take 
+  //  the state of useState(0) but in the nav bar it is /Search then displyig the home Screen
   useLayoutEffect(() => {
-    
+    console.log("in left side called "+IndexPage);
     // so that user only type localhost:3000 then use the / to open the home page
     if (location.pathname.includes('/Dashboard/')||location.pathname==='/') {
       
       setactiveButton(0)
+   
     } else {
       setactiveButton(IndexPage)
     }

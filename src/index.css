@@ -261,9 +261,25 @@
 
 .SilverButtonWithText{
   border-color: rgb(83, 63, 63,80%);
-  @apply border-[1px] lato-regular   rounded-2xl px-3 py-1  hover:text-primary hover:border-primary
+  @apply border-[1px] lato-regular   rounded-2xl px-3 py-1  
   
 }
+.GreenButtonWithText{
+  border-color: #1ce14a;
+  @apply border-[1px] lato-regular   rounded-2xl px-3 py-1  
+  
+}
+.BlueButtonWithText{
+  border-color: #3e6def;
+  @apply border-[1px] lato-regular   rounded-2xl px-3 py-1  
+  
+}
+.OrangeButtonBorder{
+  border-color: #FB773F;
+  @apply border-[1px] lato-regular   rounded-2xl px-3 py-1  
+   
+}
+
 
 
 

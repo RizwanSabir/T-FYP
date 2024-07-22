@@ -3,12 +3,14 @@
 import { useContext, useLayoutEffect, useEffect, useState } from 'react';
 import { MyContext } from '../../../../../Hooks/Context/ShowInboxContext';
 import { AnimatePresence, motion } from 'framer-motion';
+import InfluencerProfile from './InfluencerProfile';
 const Search = () => {
 
   const { setShowInbox } = useContext(MyContext);
 
 
   const [IsFilterOpen, setIsFilterOpen] = useState(0)
+  const [ShowInfluencerProfile, setShowInfluencerProfile] = useState(0)
 
 
   useLayoutEffect(() => {
@@ -32,100 +34,113 @@ const Search = () => {
 
       {/* Side bar Filter  .That will open when IsFilterOpen is Clicked */}
 
+
+
+{ShowInfluencerProfile?<InfluencerProfile setShowInfluencerProfile={setShowInfluencerProfile} />: 
+
+<>
+      
       <AnimatePresence>
-        {IsFilterOpen && (
-          <div className="bg-neutral-300/65 z-20 h-full w-full absolute top-0 right-0 ">
-            <motion.div
-              initial={{ x: 700 }}
-              animate={{ x: 0 }}
-              exit={{ x: 700 }}
-              transition={{ duration: 0.4 }}
-              className="bg-white h-full  w-[300px] sm:w-[600px] absolute top-0 right-0  "
-            >
-              <div className="mx-8 my-5  ">
-                <div className="hover:cursor-pointer" onClick={() => setIsFilterOpen(false)}>
-                  <img src="Svg/Close.svg" alt="" />
-                </div>
+      {IsFilterOpen && (
+        <div className="bg-neutral-300/65 z-20 h-full w-full absolute top-0 right-0 ">
+          <motion.div
+            initial={{ x: 700 }}
+            animate={{ x: 0 }}
+            exit={{ x: 700 }}
+            transition={{ duration: 0.4 }}
+            className="bg-white h-full  w-[300px] sm:w-[600px] absolute top-0 right-0  "
+          >
+            <div className="mx-8 my-5  ">
+              <div className="hover:cursor-pointer" onClick={() => setIsFilterOpen(false)}>
+                <img src="Svg/Close.svg" alt="" />
               </div>
-            </motion.div>
+            </div>
+          </motion.div>
+        </div>
+      )}
+    </AnimatePresence>
+
+
+    {/* Container or margin from side */}
+    <div className="pt-10 ">
+      {/* <ScreenSizeDisplay/> */}
+
+      <p className="lato-bold md:text-xl  text-center ">
+        Search from the Worlds <span style={{ color: "#FB773F" }} className="defaultTextColor">Largest Database </span>of Influencer
+      </p>
+
+      {/* options Influencer size age  */}
+
+      <div className="flex justify-center mt-10 ">
+        <div className="flex">
+
+          <div className="   md:w-[100px] md:h-[35px] absolute rounded-2xl xs:flex justify-center items-center hidden xs:block">
+            <p className="rouge-script-regular p-1  text-2xl z-20">Instagram
+            </p>
           </div>
-        )}
-      </AnimatePresence>
 
+          {/* Search bar  */}
 
-      {/* Container or margin from side */}
-      <div className="pt-10 ">
-        {/* <ScreenSizeDisplay/> */}
-
-        <p className="lato-bold md:text-xl  text-center ">
-          Search from the Worlds <span style={{ color: "#FB773F" }} className="defaultTextColor">Largest Database </span>of Influencer
-        </p>
-
-        {/* options Influencer size age  */}
-
-        <div className="flex justify-center mt-10 ">
-          <div className="flex">
-
-            <div className="   md:w-[100px] md:h-[35px] absolute rounded-2xl xs:flex justify-center items-center hidden xs:block">
-              <p className="rouge-script-regular p-1  text-2xl z-20">Instagram
-              </p>
+          <div
+            type="text"
+            className=" w-[250px]  flex justify-center  relative xs:w-[350px]  sm:w-[400px] pl-2 xs:pl-[90px] rounded-xl   md:h-[35px] md:w-[500px] md:pl-[110px] outline-0  text-[9px] xs:text-[10px] sm:text-[13px] md:text-sm  bg-white overflow-hidden "
+            placeholder="Search  anything here ... "
+          >
+            <div className="absolute top-3 right-5 cursor-pointer  h-full ">
+              <img src="Svg/SearchIcon.svg" alt="" />
             </div>
+            <input type="text" className="w-full outline-0"
+            placeholder="Search  anything here ... " />
 
-            {/* Search bar  */}
+          </div>
+          
 
-            <div
-              type="text"
-              className=" w-[250px]  flex justify-center  relative xs:w-[350px]  sm:w-[400px] pl-2 xs:pl-[90px] rounded-xl   md:h-[35px] md:w-[500px] md:pl-[110px] outline-0  text-[9px] xs:text-[10px] sm:text-[13px] md:text-sm  bg-white overflow-hidden "
-              placeholder="Search  anything here ... "
-            >
-              <div className="absolute top-3 right-5 cursor-pointer  h-full ">
-                <img src="Svg/SearchIcon.svg" alt="" />
-              </div>
-              <input type="text" className="w-full outline-0"
-              placeholder="Search  anything here ... " />
-
+          {/* Filter button . Upon click the side menu of IsFilerState will open  */}
+          <div className=" border-[2px] border-primary md:w-[100px] md:h-[35px] rounded-2xl flex justify-center items-center ml-1 xs:ml-5 md:ml-5 hover:cursor-pointer hover:bg-primary hover:text-white hover:border-white "  onClick={() => {
+            setIsFilterOpen(1)
+          }} >
+            <div className="lato-light p-2   flex justify-between ">
+              <p className="hidden xs:block text-[10px] sm:text-[13px] md:text-sm">More   </p>
+              <p className="ml-1 text-[10px] sm:text-[13px] md:text-sm ">Filters</p>
             </div>
-            
-
-            {/* Filter button . Upon click the side menu of IsFilerState will open  */}
-            <div className=" border-[2px] border-primary md:w-[100px] md:h-[35px] rounded-2xl flex justify-center items-center ml-1 xs:ml-5 md:ml-5 hover:cursor-pointer hover:bg-primary hover:text-white hover:border-white "  onClick={() => {
-              setIsFilterOpen(1)
-            }} >
-              <div className="lato-light p-2   flex justify-between ">
-                <p className="hidden xs:block text-[10px] sm:text-[13px] md:text-sm">More   </p>
-                <p className="ml-1 text-[10px] sm:text-[13px] md:text-sm ">Filters</p>
-              </div>
-            </div>
-
           </div>
 
         </div>
 
+      </div>
+
 
 {/* If you want to add filters than you can do it herer */}
 
-        <AddedFilters/>
+      <AddedFilters/>
 
 
-        {/* influencer Profile will be show below in form of list  */}
+      {/* influencer Profile will be show below in form of list  */}
 
 
 
-        <InfluencerProfile ProfileImage="Media/p1.jpg" name="Sana Sabir" UserName="@sanasabir321" Followers="92.3K" ER="34%" Instagram="4.5K" Likes="12.2K" Comments="23K" Bio="Embrace the Ashin Aura 
-Where Tradition Meets Trend" pic1="Media/p1.jpg" pic2="Media/p6.jpg" pic3="Media/p7.jpg" pic4="Media/p9.jpg" />
+      <ProfileInformation ProfileImage="Media/p1.jpg" name="Sana Sabir" UserName="@sanasabir321" Followers="92.3K" ER="34%" Instagram="4.5K" Likes="12.2K" Comments="23K" Bio="Embrace the Ashin Aura 
+Where Tradition Meets Trend" pic1="Media/p1.jpg" pic2="Media/p6.jpg" pic3="Media/p7.jpg" pic4="Media/p9.jpg" setShowInfluencerProfile={setShowInfluencerProfile}/>
 
-        <InfluencerProfile ProfileImage="Media/p7.jpg" name="Sana Sabir" UserName="@sanasabir321" Followers="92.3K" ER="34%" Instagram="4.5K" Likes="12.2K" Comments="23K" Bio="Embrace the Ashin Aura 
-Where Tradition Meets Trend" pic1="Media/p1.jpg" pic2="Media/p6.jpg" pic3="Media/p7.jpg" pic4="Media/p9.jpg" />
+      <ProfileInformation ProfileImage="Media/p7.jpg" name="Sana Sabir" UserName="@sanasabir321" Followers="92.3K" ER="34%" Instagram="4.5K" Likes="12.2K" Comments="23K" Bio="Embrace the Ashin Aura 
+Where Tradition Meets Trend" pic1="Media/p1.jpg" pic2="Media/p6.jpg" pic3="Media/p7.jpg" pic4="Media/p9.jpg" setShowInfluencerProfile={setShowInfluencerProfile} />
 
 
-      </div>
+    </div>
+    </>}
+
+    
+      
+      
+      
+      
     </>
   )
 }
 
 
 
-const InfluencerProfile = ({ ProfileImage, name, UserName, Followers, ER, Instagram, Likes, Comments, Bio, pic1, pic2, pic3, pic4 }) => {
+const ProfileInformation = ({ ProfileImage, name, UserName, Followers, ER, Instagram, Likes, Comments, Bio, pic1, pic2, pic3, pic4,setShowInfluencerProfile }) => {
 
   return (
 
@@ -186,7 +201,9 @@ const InfluencerProfile = ({ ProfileImage, name, UserName, Followers, ER, Instag
               <p>{Bio}</p>
             </div>
             <div className=" xs:flex  mt-4 gap-x-2 justify-center">
-              <p className='SilverButtonWithText text-[9px] sm:text-[12px] lg:text-sm xs:text-[10px]  cursor-pointer'>View Report</p>
+              <p className='SilverButtonWithText text-[9px] sm:text-[12px] lg:text-sm xs:text-[10px]  cursor-pointer' onClick={() => {
+                setShowInfluencerProfile(1)
+              }} >View Report</p>
               <div className="OrangeButtonWithText mt-2 xs:mt-0  text-[9px] flex items-center sm:text-[12px] lg:text-sm xs:text-[10px] cursor-pointer"><p>Add to my network</p></div>
             </div>
           </div>

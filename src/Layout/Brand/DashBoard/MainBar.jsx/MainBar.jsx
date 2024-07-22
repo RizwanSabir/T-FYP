@@ -16,6 +16,11 @@ import OverView from '../Pages/Home/OverView';
 import Engagement from '../Pages/Home/Engagement';
 import EngagementGrowth from '../Pages/Home/EngagementGrowth';
 import Media from '../Pages/Home/Media';
+import CurrentCompaign from '../Pages/Compaign/CurrentCompaign';
+import Workflow from '../Pages/Compaign/Workflow';
+import Payment from '../Pages/Compaign/Payment';
+import Content from '../Pages/Compaign/Content';
+import Dashbaord from '../Pages/Compaign/Dashbaord';
 
 const MainBar = () => {
   return (
@@ -32,7 +37,21 @@ const MainBar = () => {
           <Route path="Media" element={<Media />} />
         </Route>
         <Route path="/Search" element={<Search />} />
-        <Route path="/Compaign" element={< Compaign/>} />
+
+        <Route  path="/Compaign" element={< Compaign/>} />
+        
+        
+
+        <Route path="/Compaign/CurrentCompaign"  element={< CurrentCompaign/>} >
+        <Route index  element={< Dashbaord/>} />
+          <Route path="Workflow"  element={< Workflow/>} />
+          <Route path="Payment" element={<Payment />} />
+          <Route path="Content" element={<Content />} />
+        
+        </Route>
+  
+
+
         <Route path="/Saved" element={<Saved />} />
         <Route path="/Group" element={<Group />} />
         <Route path="/Message" element={<Message />} />

@@ -43,7 +43,7 @@ const Media = () => {
   ];
 
   return (
-    <div className="bg-white w-full mt-10 rounded-3xl">
+    <div className="bg-white w-full mt-10 rounded-3xl mb-10">
       <div className="px-5 py-5 flex flex-col">
         <p className="lato-bold text-lg">Media</p>
         <div className="mt-6 poppins-regular text-[10px] md:text-base">

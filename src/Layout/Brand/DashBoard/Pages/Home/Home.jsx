@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { BrowserRouter as Router, Routes, Route, useNavigate, Outlet } from 'react-router-dom';
 import './Index.css';
 import { DropdownSvg } from '../../../../../Components/Svg/DropDownSvg';
+import NavBarItems from '../../../../../Components/NavBar/NavBarItems';
 
 const Home = () => {
   const navigate=useNavigate()
@@ -24,7 +25,7 @@ useEffect(() => {
       </div>
       <ul className="flex text-[10px] justify-end xs:justify-center sm:text-base sm:justify-center list-none mt-7">
         <div className="navBgColor hidden xs:flex rounded-full xs:py-2 xs:px-2 sm:flex-nowrap md:px-10 lg:gap-x-4">
-          <NavItems items={navItems} />
+          <NavBarItems items={navItems} path={"Dashboard"} />
         </div>
 
         {/* //This will display on sm screen only  */}
@@ -40,36 +41,6 @@ useEffect(() => {
 };
 
 
-
-const NavItems = ({ items }) => {
-  const [isHover, setIsHover] = useState(-1);
-  const [isActive, setIsActive] = useState(0);
-  const navigate = useNavigate();
-
-  return (
-    <>
-      {items.map((item, index) => (
-        <div
-          key={index}
-          className="poppins-semibold relative px-1 z-50 w-full sm:px-2 text-center sm:py-2 cursor-pointer text-sm"
-          onMouseEnter={() => setIsHover(index)}
-          onMouseLeave={() => setIsHover(-1)}
-          onClick={() => {
-            setIsActive(index);
-            navigate(`/Dashboard/${item}`);
-          }}
-        >
-          <li className={isActive === index || isHover === index ? 'text-primary' : ''}>
-            <p>{item}</p>
-            {isActive === index && (
-              <motion.div layoutId="1" className="absolute w-full bg-white h-full top-0 left-0 p-2 rounded-full -z-10"></motion.div>
-            )}
-          </li>
-        </div>
-      ))}
-    </>
-  );
-};
 
 const Dropdown = ({ items }) => {
   const [isOpen, setIsOpen] = useState([0, 'Overview']);

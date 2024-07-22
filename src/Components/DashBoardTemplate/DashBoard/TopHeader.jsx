@@ -2,32 +2,16 @@ import { useLayoutEffect, useState } from 'react'
 import { motion, MotionConfig } from 'framer-motion';
 import { useLocation } from 'react-router-dom';
 
-const TopHeader = ({ SideBar, setSideBar,Pages }) => {
+const TopHeader = ({ SideBar, setSideBar,Pages,activeButton }) => {
 
-  //WE are using the useLocation Hook to determine th ecurrent Location and 
-
-  const [Page, setPage] = useState('Home')
-  const location = useLocation();
-
+//  activeButton give the active location of the page 
 
   //Removing the / from the Pages so that i can display the Correct Name
-  let PageNames = Pages.map(path => path.substring(1));
+  let PageName = Pages.map(path => path.substring(1));
 
   // If side bar is open Change the color 
   let HandBurger = `h-1 rounded-full  w-[30px] my-1  ${SideBar ? 'bg-white' : 'bg-black'}`
 
-  //Checking the Location Path and Displaying the correct name on the Header 
-
-  useLayoutEffect(() => {
-    let IndexPage = Pages.indexOf(location.pathname)
-
-    if (location.pathname.includes('/Dashboard')||location.pathname.includes('/')) {
-      setPage('Dashboard')
-    } else {
-      setPage(PageNames[IndexPage])
-    }
-
-  }, [location])
 
 
 
@@ -55,7 +39,7 @@ const TopHeader = ({ SideBar, setSideBar,Pages }) => {
             </MotionConfig>
 
             {/* Header Name is Display here  */}
-            <p>{Page}</p>
+            <p>{PageName[activeButton]}</p>
 
           </div>
           {/* Profile picture and Notification Icon are Displayed Here  */}
