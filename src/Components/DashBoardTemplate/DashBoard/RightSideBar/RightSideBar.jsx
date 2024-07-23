@@ -15,7 +15,7 @@ const RightSideBar = () => {
 
   return (
     <>
-       <div className={ `col-span-3 mx-5 hidden ${ShowInbox?'lg:block':'lg:hidden'} `}>
+       <div className={ `col-span-3 mx-5 hidden text-[9px] sm:text-[10px] mdm:text-[12px]  ${ShowInbox?'lg:block':'lg:hidden'} `}>
         <p className='poppins-semibold  text-lg'>Inbox</p>
 
 
@@ -38,17 +38,17 @@ const RightSideBar = () => {
 const InboxMessages = ({ image, name, time, message, unread = 0 }) => {
   return (
     <>
-      <div className=' flex  my-4'>
+      <div className=' flex  my-4 text-[9px] sm:text-[10px] mdm:text-[12px]'>
 
         <img className='size-[35px] Avatar' src={`/Media/${image}.jpg`} alt="" />
         <div className=' flex flex-1 flex-col  ml-2'>
           <div className='flex flex-1 justify-between  items-center'>
-            <p className='poppins-semibold text-sm'>{name}</p>
-            <p className='text-xs poppins-medium '>{time}</p>
+            <p className='poppins-semibold '>{name}</p>
+            <p className=' poppins-medium '>{time}</p>
           </div>
-          <div className='flex justify-between text-sm text-black/70 text-[12px]'>
+          <div className='flex justify-between  text-black/70 text-[12px]'>
             <p>{message}</p>
-            {unread ? <p className='bg-primary/90 px-2 text-white  flex items-center rounded-full  text-[10px]'>{unread}</p> : ""}
+            {unread ? <p className='bg-primary/90 px-2 text-white  flex items-center rounded-full  '>{unread}</p> : ""}
           </div>
         </div>
       </div>
