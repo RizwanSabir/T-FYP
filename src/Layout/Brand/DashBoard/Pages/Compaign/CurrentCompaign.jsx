@@ -3,6 +3,7 @@ import { MyContext } from '../../../../../Hooks/Context/ShowInboxContext';
 import {Outlet, useNavigate} from 'react-router-dom';
 import {useState} from 'react'; 
 import {motion} from 'framer-motion';
+import { DropdownSvg } from '../../../../../Components/Svg/DropDownSvg';
 const CurrentCompaign = () => {
 
     const { setShowInbox } = useContext(MyContext);
@@ -17,17 +18,21 @@ const CurrentCompaign = () => {
     }
   })
 
-  let pages=[['Compaign',''],['Workflow','Workflow'],['Content','Content'],['Payment','Payment']]
+  let pages=[['Compaign',''],['Workflow','Workflow'],['Content','Content'],['Payment','Payment'],['Report','Report']]
+  const navItems = ['Compaign', 'Workflow', 'Content', 'Payment','Report'];
 
   return (
     <>
-     
-     <div className="w-[500px] mx-auto pt-5">
+     <div className=" sm:w-[500px] mx-auto pt-5">
         <p className="poppins-semibold">
             Clothing Dev'23
         </p>
-        <div className="navBgColor  xs:flex rounded-full xs:py-2 xs:px-2 sm:flex-nowrap md:px-10 lg:gap-x-4 mt-5">
+        <div className="navBgColor hidden sm:flex  rounded-full xs:py-2 xs:px-2 sm:flex-nowrap md:px-10 lg:gap-x-4 mt-5">
           <NavBarItems items={pages}   id="Comapign" />
+        </div>
+
+        <div className="sm:hidden">
+          <Dropdown items={navItems} />
         </div>
      </div>
 
@@ -70,6 +75,35 @@ const NavBarItems = ({ items }) => {
       </>
     );
   };
+
+
+  
+const Dropdown = ({ items }) => {
+  const [isOpen, setIsOpen] = useState([0, 'Overview']);
+
+  return (
+    <div className="flex items-end mr-3 flex-col poppins-semibold   ">
+      <div
+        className="p-1 flex justify-center w-[100px] navBgColor rounded-full items-center  text-[10px]"
+        onClick={() => setIsOpen([!isOpen[0], isOpen[1]])}>
+        <div>{isOpen[1]}</div>
+        <DropdownSvg />
+      </div>
+      {isOpen[0] ? (
+        <ul className="poppins-regular flex gap-y-2 flex-col mt-2 text-[10px]">
+          {items.map((item, index) =>
+            isOpen[1] !== item ? (
+              <li key={index} className="dropdown-item" onClick={() => setIsOpen([0, item])}>
+                {item}
+              </li>
+            ) : null
+          )}
+        </ul>
+      ):""}
+    </div>
+  );
+};
+
 
 
 export default CurrentCompaign

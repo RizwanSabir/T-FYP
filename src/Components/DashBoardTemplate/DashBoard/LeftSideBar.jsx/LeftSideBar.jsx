@@ -26,7 +26,6 @@ const LeftSideBar = ({CustomButtons,IconNames,Pages,activeButton,setactiveButton
     const pathParts = pathname.split('/');
     // Use the first part after splitting by '/' that is not empty
     const relevantPath = `/${pathParts[1]}`;
-    console.log("revlant path is "+relevantPath);
     return Pages.indexOf(relevantPath);
   };
  // Get the Index and set the Active button accordingly 
@@ -38,7 +37,6 @@ const LeftSideBar = ({CustomButtons,IconNames,Pages,activeButton,setactiveButton
   // also i have to used it because let take an example user search for /search but when the component mounts it take 
   //  the state of useState(0) but in the nav bar it is /Search then displyig the home Screen
   useLayoutEffect(() => {
-    console.log("in left side called "+IndexPage);
     // so that user only type localhost:3000 then use the / to open the home page
     if (location.pathname.includes('/Dashboard/')||location.pathname==='/') {
       

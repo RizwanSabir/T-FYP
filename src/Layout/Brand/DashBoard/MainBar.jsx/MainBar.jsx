@@ -21,6 +21,7 @@ import Workflow from '../Pages/Compaign/Workflow';
 import Payment from '../Pages/Compaign/Payment';
 import Content from '../Pages/Compaign/Content';
 import Dashbaord from '../Pages/Compaign/Dashbaord';
+import Report from '../Pages/Compaign/Report';
 
 const MainBar = () => {
   return (
@@ -47,6 +48,7 @@ const MainBar = () => {
           <Route path="Workflow"  element={< Workflow/>} />
           <Route path="Payment" element={<Payment />} />
           <Route path="Content" element={<Content />} />
+          <Route path="Report" element={<Report />} />
         
         </Route>
   

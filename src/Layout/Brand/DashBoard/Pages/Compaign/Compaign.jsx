@@ -2,6 +2,7 @@
 import { useContext, useLayoutEffect, useEffect, } from 'react';
 import { MyContext } from '../../../../../Hooks/Context/ShowInboxContext';
 import { useNavigate } from 'react-router-dom';
+import ScreenSizeDisplay from '../../../../../useCurrentScreenSize';
 
 const Compaign = () => {
   const { setShowInbox } = useContext(MyContext);
@@ -22,35 +23,42 @@ const Compaign = () => {
   })
   return (
     <>
-
       {/* Top bar total posted ,active comapign */}
-      <div className="pt-5 w-[700px] mx-auto ">
+      <div className="pt-5 w-[300px] sm:w-[500px] mdm:w-[700px] mx-auto ">
 
         {/* Information bar of whole campaign */}
 
-        <div className="px-2 py-7 rounded-2xl border-2 bg-white bt-10 flex justify-around ">
+        <div className="px-2 py-3 sm:py-7 rounded-2xl border-2 bg-white  flex justify-around items-center ">
 
-          <div >
-            <p className="text-black/50 poppins-regula text-[12px]">Total Posted</p>
-            <div className="flex ">
-              <p className="poppins-semibold  text-[12px]">10 of 19</p>
-              <p className="text-primary poppins-semibold text-[12px]">Show all content</p>
+          <div className="mr-1" >
+            <p className="text-black/50 poppins-regula text-[7px] sm:text-[10px] mdm:text-[12px]">Total Posted</p>
+            <div className="flex justify-between">
+              <p className="poppins-semibold text-[7px] sm:text-[10px] mdm:text-[12px]"><span className="text-primary">10</span> of 19</p>
             </div>
           </div>
 
-          <div className="border-l-2 pl-10  flex flex-col items-center">
-            <p className="text-black/50 poppins-regular text-[12px] ">Active Campaign</p>
-            <p className="poppins-semibold  text-[12px]">1</p>
+          {/* Left border */}
+          <div className=" border-l-2  h-[30px]"></div>
+
+          <div className="pl-1 mdm:pl-10  flex flex-col items-center ">
+            <p className="text-black/50 poppins-regular text-[7px] sm:text-[10px] mdm:text-[12px] ">Active Campaign</p>
+            <p className="poppins-semibold text-[7px] sm:text-[10px] mdm:text-[12px]">1</p>
           </div>
 
-          <div className="border-l-2 pl-10 flex flex-col items-center">
-            <p className="text-black/50 poppins-regular text-[12px]">Total Campaign</p>
-            <p className="poppins-semibold text-[12px]">10</p>
+           {/* Left border */}
+          <div className=" border-l-2  h-[30px]"></div>
+
+          <div className=" pl-1 mdm:pl-10 flex flex-col items-center text-[7px] sm:text-[10px] ">
+            <p className="text-black/50 poppins-regular  mdm:text-[12px]">Total Campaign</p>
+            <p className="poppins-semibold mdm:text-[12px]">10</p>
           </div>
 
-          <div className="border-l-2 pl-10 flex flex-col items-center">
-            <p className="text-black/50 poppins-regular text-[12px]">Budget Spent</p>
-            <p className="poppins-semibold text-[12px]">2.5K of 5.4K</p>
+           {/* Left border */}
+          <div className=" border-l-2  h-[30px]"></div>
+
+          <div className=" pl-1 mdm:pl-10 flex flex-col items-center text-[7px] sm:text-[10px] mdm:text-[12px]">
+            <p className="text-black/50 poppins-regular ">Budget Spent</p>
+            <p className="poppins-semibold ">2.5K of 5.4K</p>
           </div>
 
         </div>
@@ -69,28 +77,28 @@ const Compaign = () => {
         }}>
 
           <div className="flex gap-x-2 items-center" >
-            <div className="flex items-center size-[50px] ">
+            <div className="flex items-center size-[35px] sm:size-[50px] ">
               <img className="aspect-square Avatar" src="Media/p1.jpg" alt="" />
             </div>
-            <div className=" poppins-regula text-[12px]">
+            <div className=" poppins-regula  text-[7px] sm:text-[10px] mdm:text-[12px]">
               <p>Clothing Dec'23</p>
-              <div className="flex  text-black/50">
-                <p className="poppins-semibold  text-[12px]">Nov 20 - Dec 23</p>
-                <p className="text-primary poppins-semibold text-[12px] pl-1">15 influencers</p>
+              <div className="flex flex-col sm:flex-row text-black/50">
+                <p className="poppins-semibold  ">Nov 20 - Dec 23</p>
+                <p className="text-primary poppins-semibold  sm:pl-1">15 influencers</p>
               </div>
             </div>
 
           </div>
 
-          <div className="pl-10   flex flex-col items-center">
-            <p className=" poppins-regular text-[12px]  ">Posted</p>
-            <p className="poppins-semibold  text-[12px] text-black/50">19</p>
+          <div className="pl-10   flex flex-col items-center text-[7px] sm:text-[10px] mdm:text-[12px]">
+            <p className=" poppins-regular ">Posted</p>
+            <p className="poppins-semibold   text-black/50">19</p>
           </div>
 
 
-          <div className=" pl-10 flex flex-col items-center">
-            <p className=" poppins-regular text-[12px]">Budget Spent</p>
-            <p className="poppins-semibold text-[12px] text-black/50">2.5K of 5.4K</p>
+          <div className=" pl-10 flex flex-col items-center text-[7px] sm:text-[10px] mdm:text-[12px]">
+            <p className=" poppins-regular ">Budget Spent</p>
+            <p className="poppins-semibold  text-black/50">2.5K of 5.4K</p>
           </div>
 
           <img src="Svg/More.svg" />
