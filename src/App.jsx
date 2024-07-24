@@ -20,7 +20,7 @@ const App = () => {
   return (
   
   <>
-  <div className="scroll-container">
+  <div className=" sm:scroll-container">
 <BrowserRouter>
 
 {/* {AnimationState ?   <SplashScreen/>:<BrandRoutes/>} */}
