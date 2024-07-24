@@ -1,6 +1,7 @@
 import { useContext, useLayoutEffect, useEffect } from 'react'
 import { MyContext } from '../../../../../Hooks/Context/ShowInboxContext';
 import  './Index.css';
+import ScreenSizeDisplay from '../../../../../useCurrentScreenSize';
 const Message = () => {
 
   const { setShowInbox } = useContext(MyContext);
@@ -21,23 +22,23 @@ const Message = () => {
       <div className="bg-white  h-screen text-[9px] xs:text-[10px] sm:text-[13px] md:text-[14px] ">
 
         {/* Wrapper */}
-        <div className="grid grid-cols-12  w-[1100px] mx-auto">
+        <div className="   sm:grid grid-cols-12  mdm:w-[800px] lg:w-[1000px] mx-auto">
 
 
 
           {/* Left Side */}
-          <div className="col-span-4 border-r-[1px] pr-2 h-screen ">
+          <div className="col-span-4 border-r-[1px] pr-2 h-screen ml-2">
 
             {/* Top Search */}
 
-            <div className="flex justify-between items-center     ">
+            <div className="flex  justify-center mt-5 sm:mt-5 sm:justify-between items-center     ">
               <div className="  ">
-                <div className="flex   items-center       w-[250px] xs:w-[250px]  relative">
+                <div className="flex items-center  w-[250px]  sm:w-[180px]     mdm:w-[200px] lg:w-[250px]  relative">
                   <img className="size-[20px]  absolute top-3 left-2" src="/Svg/SearchIcon.svg" alt="" />
                   <input className="outline-0  bg-none w-full  h-[40px]   bg-black/5 rounded-lg pl-9" type="text" placeholder="Search" />
                 </div>
               </div>
-              <div className="OrangeButtonWithText-v3   flex items-center  cursor-pointer justify-center"><p className="text-2xl">+</p></div>
+              <div className="OrangeButtonWithText-v3 fixed bottom-10 right-10 sm:bottom-0 sm:right-0 sm:relative  sm:size-[30px] mdm:size-[40px]    flex items-center  cursor-pointer justify-center"><p className=" text-2xl">+</p></div>
 
             </div>
 
@@ -137,10 +138,10 @@ const messages = [
 
 function Test() {
   return (
-    <div className="flex items-center justify-center  bg-gray-100    ">
-      <div className="w-full  bg-white rounded-lg shadow-lg p-4  ">
+    <div className="flex items-center   bg-gray-100    w-full ">
+      <div className="  w-full bg-white rounded-lg shadow-lg p-4  ">
        
-        <div className="space-y-4 overflow-y-auto h-[400px]   scroll-container">
+        <div className="space-y-4 overflow-y-auto  mdm:h-[280px] lg:h-[400px]   scroll-container-v1">
           {messages.map((message) => (
             <div
               key={message.id}
