@@ -2,6 +2,7 @@ import { BrowserRouter } from 'react-router-dom';
 import BrandRoutes from './Layout/Brand/BrandRoutes'
 import SplashScreen from './Layout/SplashScreen';
 import {useRef,useState,useEffect} from 'react';
+import  './index.css';
 
 const App = () => {
  
@@ -19,6 +20,7 @@ const App = () => {
   return (
   
   <>
+  <div className="scroll-container">
 <BrowserRouter>
 
 {/* {AnimationState ?   <SplashScreen/>:<BrandRoutes/>} */}
@@ -29,7 +31,7 @@ const App = () => {
 {/* <Login/> */}
 </BrowserRouter>
 
-
+</div>
 
   </>
   

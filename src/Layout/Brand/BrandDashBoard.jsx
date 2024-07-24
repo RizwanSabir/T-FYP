@@ -37,12 +37,12 @@ const BrandDashBoard = () => {
     { "name": "Info", "link": "/Info", "ImageSrc": "/Svg/Help.svg" }]
 
     // Used to display the Icon and Its name on Hover and when Click address
-    //name ,image,link 
-    let IconNames = [['HomeIcon', 'Dashboard', '/Dashboard'], ['Compaign', 'Compaign', 'Compaign'], ['Saved', 'Your Network', 'Saved'], ['Group', 'Group', 'Group'], ['message', 'Message', 'Message']]
+    //image ,name hover,link 
+    let IconNames = [['HomeIcon', 'Dashboard', '/Dashboard'], ['Compaign', 'Compaign', 'Compaign'], ['Saved', 'Your Network', 'Saved'], ['Blog', 'Blog Posts', 'Blog'], ['message', 'Message', 'Message']]
 
     // It will navigate the page upon the user itself add URL orr by navigate funtion when user Click 
     // It will the Active Button according to 0,1,2,3,4,5,6
-    let Pages = ['/Dashboard', '/Compaign', '/Saved', '/Group', '/Message', '/Search', '/Info']
+    let Pages = ['/Dashboard', '/Compaign', '/Saved', '/Blog', '/Message', '/Search', '/Info']
 
 
     let menuItems = [
@@ -50,7 +50,7 @@ const BrandDashBoard = () => {
       { icon: <HomeIcon color="white" />, label: 'Dashboard', navigate: "/Dashboard" },
       { icon: <CompaignIcon color="white" />, label: 'Compaign', navigate: "/Compaign" },
       { icon: <SavedIcon color="white" />, label: 'Saved Network', navigate: "/Saved" },
-      { icon: <GroupIcon color="white" />, label: 'Group', navigate: "/Group" },
+      { icon: <GroupIcon color="white" />, label: 'Blog Posts', navigate: "/Blog" },
       { icon: <Message color="white" />, label: 'Message', navigate: "/Message" },
       { icon: <HelpIcon color="white" />, label: 'Help', navigate: "/Info" },
     ];

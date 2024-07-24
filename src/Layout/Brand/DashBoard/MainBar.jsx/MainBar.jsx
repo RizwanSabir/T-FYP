@@ -6,7 +6,6 @@ import Compaign from '../Pages/Compaign/Compaign';
 
 
 import Saved from '../Pages/Saved/Saved';
-import Group from '../Pages/Group/Group';
 import Message from '../Pages/Message/Message';
 import Info from '../Pages/Info/Info';
 import ErrorPage from '../Pages/ErrorPage/ErrorPage';
@@ -22,6 +21,9 @@ import Payment from '../Pages/Compaign/Payment';
 import Content from '../Pages/Compaign/Content';
 import Dashbaord from '../Pages/Compaign/Dashbaord';
 import Report from '../Pages/Compaign/Report';
+import Blog from '../Pages/Blog/Blog';
+import Main from '../Pages/Blog/Main';
+import CreateBlog from '../Pages/Blog/CreateBlog';
 
 const MainBar = () => {
   return (
@@ -55,7 +57,15 @@ const MainBar = () => {
 
 
         <Route path="/Saved" element={<Saved />} />
-        <Route path="/Group" element={<Group />} />
+
+        <Route path="/Blog" element={<Main />} >
+        
+        <Route index  element={< Blog/>} />
+        <Route path="CreateBlog"  element={< CreateBlog/>} />
+        </Route>
+
+
+
         <Route path="/Message" element={<Message />} />
         <Route path="/Info" element={<Info />} />
         <Route path="*" element={<ErrorPage />} />
