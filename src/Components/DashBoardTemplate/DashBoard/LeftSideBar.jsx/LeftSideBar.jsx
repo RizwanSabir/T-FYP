@@ -26,6 +26,7 @@ const LeftSideBar = ({CustomButtons,IconNames,Pages,activeButton,setactiveButton
     const pathParts = pathname.split('/');
     // Use the first part after splitting by '/' that is not empty
     const relevantPath = `/${pathParts[1]}`;
+    console.log("relative path is"+relevantPath);
     return Pages.indexOf(relevantPath);
   };
  // Get the Index and set the Active button accordingly 
@@ -38,7 +39,7 @@ const LeftSideBar = ({CustomButtons,IconNames,Pages,activeButton,setactiveButton
   //  the state of useState(0) but in the nav bar it is /Search then displyig the home Screen
   useLayoutEffect(() => {
     // so that user only type localhost:3000 then use the / to open the home page
-    if (location.pathname.includes('/Dashboard/')||location.pathname==='/') {
+    if (location.pathname.includes('Dashboard/')||location.pathname==='/') {
       
       setactiveButton(0)
    

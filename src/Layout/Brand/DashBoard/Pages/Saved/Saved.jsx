@@ -1,23 +1,9 @@
-import {useContext,useLayoutEffect,useEffect} from 'react'
-import { MyContext } from '../../../../../Hooks/Context/ShowInboxContext';
-import ScreenSizeDisplay from '../../../../../useCurrentScreenSize';
 import { DropdownSvg } from '../../../../../Components/Svg/DropDownSvg';
 import {useState} from 'react';
 const Saved = () => {
   
-  const { setShowInbox } = useContext(MyContext);
 
   
-
-  useLayoutEffect(() => {
-    setShowInbox(0)
-  })
-
-  useEffect(() => {
-    return () => {
-      setShowInbox(1)
-    }
-  })
 
   const navItems = ['All Influencer','Favorites', 'My List'];
 
@@ -57,7 +43,7 @@ const Saved = () => {
 <>
 
 
-<div className="pt-5">
+<div className="pt-5  h-screen">
 <div className="bg-white xs:w-[500px] sm:w-[600px] mdm:w-[700px]  lg:w-[800px] mx-auto rounded-2xl">
 
 

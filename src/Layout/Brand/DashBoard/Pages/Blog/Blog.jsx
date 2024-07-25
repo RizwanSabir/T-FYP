@@ -1,10 +1,8 @@
 import { useContext, useLayoutEffect, useEffect } from 'react';
-import { MyContext } from '../../../../../Hooks/Context/ShowInboxContext';
 import {  useNavigate } from 'react-router-dom';
 import ScreenSizeDisplay from '../../../../../useCurrentScreenSize';
 
 const Blog = () => {
-  const { setShowInbox } = useContext(MyContext);
 
   const posts = [
     {
@@ -29,20 +27,12 @@ const Blog = () => {
 
 
   const navigate = useNavigate()
-  useLayoutEffect(() => {
-    setShowInbox(0)
-  })
-
-  useEffect(() => {
-    return () => {
-      setShowInbox(1)
-    }
-  })
+ 
 
   return (
     <>
     
-      <div className="sm:w-[500px]  mdm:w-[600px] lg:w-[900px] mx-auto pt-5 ">
+      <div className="sm:w-[500px]  mdm:w-[600px] lg:w-[900px] mx-auto pt-5  h-screen">
         <div className="flex justify-end cursor-pointer mb-5"
         
         onClick={() => {

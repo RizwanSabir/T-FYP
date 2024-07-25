@@ -1,20 +1,12 @@
 import { useContext, useLayoutEffect, useEffect } from 'react'
-import { MyContext } from '../../../../../Hooks/Context/ShowInboxContext';
-import  './Index.css';
-import ScreenSizeDisplay from '../../../../../useCurrentScreenSize';
+import './Index.css';
+import { useState } from 'react';
 const Message = () => {
 
-  const { setShowInbox } = useContext(MyContext);
 
-  useLayoutEffect(() => {
-    setShowInbox(0)
-  })
+  const [ShowMessage, setShowMessage] = useState(0)
 
-  useEffect(() => {
-    return () => {
-      setShowInbox(1)
-    }
-  })
+ 
   return (
     <>
 
@@ -22,12 +14,14 @@ const Message = () => {
       <div className="bg-white  h-screen text-[9px] xs:text-[10px] sm:text-[13px] md:text-[14px] ">
 
         {/* Wrapper */}
-        <div className="   sm:grid grid-cols-12  mdm:w-[800px] lg:w-[1000px] mx-auto">
+        <div className={`${ShowMessage ? 'block sm:grid sm:grid-cols-12 mdm:w-[800px] lg:w-[1000px] mx-auto' : 'sm:grid sm:grid-cols-12 mdm:w-[800px] lg:w-[1000px] mx-auto'}`}>
+
 
 
 
           {/* Left Side */}
-          <div className="col-span-4 border-r-[1px] pr-2 h-screen ml-2">
+
+          <div className={`${ShowMessage?'hidden sm:block sm:col-span-4 border-r-[1px] pr-2 h-screen ml-2':'col-span-4 border-r-[1px] pr-2 h-screen ml-2'}`}>
 
             {/* Top Search */}
 
@@ -44,44 +38,63 @@ const Message = () => {
 
             {/* Influencer list  */}
             <div className="ml-10 mr-2 mt-5">
-    <p className="poppins-semibold text-[15px]">Member</p>
-    <InfluncerMessage Image={"p1.jpg"}   Name="Rizwan" Time="12:00 AM" Message="hi" Unread="2" />
-    <InfluncerMessage Image={"p6.jpg"}   Name="Sana" Time="1:00 PM" Message="Now I am here" Unread={0} />
-    <InfluncerMessage Image={"p7.jpg"}   Name="Ali" Time="06:00 PMz" Message="OK! its done" Unread="5" />
- 
+              <p className="poppins-semibold text-[15px]">Member</p>
+              <InfluncerMessage Image={"p1.jpg"} Name="Rizwan" Time="12:00 AM" Message="hi" Unread="2"
+
+               
+                setShowMessage={setShowMessage}
+              />
+              <InfluncerMessage Image={"p6.jpg"} Name="Sana" Time="1:00 PM" Message="Now I am here" Unread={0}  />
+              <InfluncerMessage Image={"p7.jpg"} Name="Ali" Time="06:00 PMz" Message="OK! its done" Unread="5" />
+
             </div>
 
           </div>
 
 
+
+
           {/* Right Side */}
-          <div className="col-span-8">
+          <div className={`${ShowMessage ? 'w-full block sm:col-span-8' : 'hidden sm:block  col-span-8'}`}>
 
-{/* Wrrapper */}
-    <div className="mx-2 relative">
- 
- {/* Top Header Name of Reciver  */}
+            {/* Wrrapper */}
+            <div className="mx-2 relative">
 
-  <div className=' flex   text-[9px] sm:text-[10px] mdm:text-[12px]'>
+              {/* Top Header Name of Reciver  */}
+             
+              <div className=' flex   text-[9px] sm:text-[10px] mdm:text-[12px]'>
+            
+              <div className={`${ShowMessage?'flex mr-4 sm:hidden':'hidden'}`}
+              onClick={() => {
+                setShowMessage(0)
+              }}
+              >
+                <img src="/Svg/Back.svg" alt="" />
+              </div>
+                <img className='size-[40px] Avatar' src={`/Media/p1.jpg`} alt="" />
+                <div className=' flex flex-1 flex-col  ml-2'>
+                 
+                  <div className='flex flex-1 justify-between  items-center'>
+                    <p className='poppins-semibold '> Rizwan Sabir</p>
+                  </div>
+                  <div className='flex  ml-1   text-black/70 text-[10px]  items-center gap-1'>
+                    <div className="size-[6px] rounded-full bg-green-500"></div>
+                    <p>online</p>
+                  </div>
 
-<img className='size-[40px] Avatar' src={`/Media/p1.jpg`} alt="" />
-<div className=' flex flex-1 flex-col  ml-2'>
-  <div className='flex flex-1 justify-between  items-center'>
-    <p className='poppins-semibold '> Rizwan Sabir</p>
-  </div>
-  <div className='flex  ml-1   text-black/70 text-[10px]  items-center gap-1'>
-    <div className="size-[6px] rounded-full bg-green-500"></div>
-    <p>online</p>
-  </div>
-  
-</div>
-</div>
-<Test/>
+                </div>
+              </div>
+              <Test ShowMessage={ShowMessage} />
 
 
-    </div>
+            </div>
 
           </div>
+
+
+
+
+
         </div>
 
 
@@ -93,27 +106,29 @@ const Message = () => {
 }
 
 
-const InfluncerMessage = ({Image,Name,Time,Message,Unread}) => {
+const InfluncerMessage = ({ Image, Name, Time, Message, Unread,setShowMessage }) => {
 
   return <>
-  <div className=' flex  my-4 text-[9px] sm:text-[10px] mdm:text-[12px]'>
+    <div className=' flex  my-4 text-[9px] sm:text-[10px] mdm:text-[12px]'  onClick={() => {
+                  console.log("it is clicked");
+                  setShowMessage(1);}}>
 
-<img className='size-[35px] Avatar' src={`/Media/${Image}`} alt="" />
-<div className=' flex flex-1 flex-col  ml-2'>
-  <div className='flex flex-1 justify-between  items-center'>
-    <p className='poppins-semibold '> {Name}</p>
-    <p className=' poppins-medium  text-[10px]'>{Time}</p>
-  </div>
-  <div className='flex justify-between  text-black/70 text-[10px] '>
-    <p>{Message}</p>
-    {Unread ? <p className='bg-primary/90 px-2 text-white  flex items-center rounded-full  '>{Unread}</p> : ""}
-  </div>
-</div>
-</div>
-  
-  
+      <img className='size-[35px] Avatar' src={`/Media/${Image}`} alt="" />
+      <div className=' flex flex-1 flex-col  ml-2'>
+        <div className='flex flex-1 justify-between  items-center'>
+          <p className='poppins-semibold '> {Name}</p>
+          <p className=' poppins-medium  text-[10px]'>{Time}</p>
+        </div>
+        <div className='flex justify-between  text-black/70 text-[10px] '>
+          <p>{Message}</p>
+          {Unread ? <p className='bg-primary/90 px-2 text-white  flex items-center rounded-full  '>{Unread}</p> : ""}
+        </div>
+      </div>
+    </div>
+
+
   </>
-  
+
 }
 
 
@@ -136,20 +151,19 @@ const messages = [
   { id: 12, text: "woohoooo 🔥", sender: "them" },
 ];
 
-function Test() {
+function Test({ ShowMessage }) {
   return (
-    <div className="flex items-center   bg-gray-100    w-full ">
+    <div className={`${ShowMessage ? 'xs:flex items-center   bg-gray-100    w-full' : 'hidden  xs:flex items-center   bg-gray-100    w-full'} `}>
       <div className="  w-full bg-white rounded-lg shadow-lg p-4  ">
-       
+
         <div className="space-y-4 overflow-y-auto  mdm:h-[280px] lg:h-[400px]   scroll-container-v1">
           {messages.map((message) => (
             <div
               key={message.id}
               className={`flex ${message.sender === 'me' ? 'justify-end' : 'justify-start'}`}>
               <div
-                className={`max-w-xs px-4 py-2 rounded-lg ${
-                  message.sender === 'me' ? 'bg-orange-500 text-white' : 'bg-gray-200'
-                }`}
+                className={`max-w-xs px-4 py-2 rounded-lg ${message.sender === 'me' ? 'bg-orange-500 text-white' : 'bg-gray-200'
+                  }`}
               >
                 {message.text}
               </div>

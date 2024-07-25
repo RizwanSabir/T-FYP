@@ -1,10 +1,8 @@
 import {  useContext } from 'react';
 import './Index.css';
-import { MyContext } from '../../../../Hooks/Context/ShowInboxContext';
 
 const RightSideBar = () => {
 
-  const { ShowInbox} = useContext(MyContext);
 
 
 
@@ -15,7 +13,8 @@ const RightSideBar = () => {
 
   return (
     <>
-       <div className={ `col-span-3 mx-5 hidden text-[9px] sm:text-[10px] mdm:text-[12px]  ${ShowInbox?'lg:block':'lg:hidden'} `}>
+       <div className="bg-white sm:hidden lg:block lg:col-span-3">
+       <div className={ `mx-5 sm:hidden lg:block  bg-white text-[9px] sm:text-[10px] mdm:text-[12px]  `}>
         <p className='poppins-semibold  text-lg'>Inbox</p>
 
 
@@ -25,7 +24,7 @@ const RightSideBar = () => {
         <InboxMessages name="Rizwan Sabir" image="p10" time="Yesterday" message="Where ?" unread={4} />
         <InboxMessages name="Rizwan Sabir" image="p9" time="09:20" message="Down here" />
 
-      </div> 
+      </div></div> 
 
 
     </>

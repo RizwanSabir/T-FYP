@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route, useNavigate, Outlet } from 'rea
 import './Index.css';
 import { DropdownSvg } from '../../../../../Components/Svg/DropDownSvg';
 import NavBarItems from '../../../../../Components/NavBar/NavBarItems';
+import RightSideBar from '../../../../../Components/DashBoardTemplate/DashBoard/RightSideBar/RightSideBar';
 
 const Home = () => {
   const navigate=useNavigate()
@@ -18,7 +19,9 @@ useEffect(() => {
   const navItems = ['Overview', 'Audience', 'Engagement', 'Spendings', 'Influencers', 'Media'];
 
   return (
-    <div className="px-6 py-3">
+   <>
+   <div className=" sm:grid sm:grid-cols-12   ">
+   <div className="px-6 py-3 col-span-12 lg:col-span-9">
       <div>
         <h1 className="lato-bold text-xl">Welcome, Rizwan Sabir</h1>
         <h1 className="lato-regular text-sm text-black/50">27 March 2024</h1>
@@ -37,6 +40,12 @@ useEffect(() => {
        <Outlet/>
       </div>
     </div>
+
+      <RightSideBar/>
+
+   </div>
+   
+   </>
   );
 };
 

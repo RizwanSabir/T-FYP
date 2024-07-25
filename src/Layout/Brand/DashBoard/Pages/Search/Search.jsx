@@ -1,31 +1,15 @@
 
 
 import { useContext, useLayoutEffect, useEffect, useState } from 'react';
-import { MyContext } from '../../../../../Hooks/Context/ShowInboxContext';
 import { AnimatePresence, motion } from 'framer-motion';
 import InfluencerProfile from './InfluencerProfile';
 const Search = () => {
 
-  const { setShowInbox } = useContext(MyContext);
 
 
   const [IsFilterOpen, setIsFilterOpen] = useState(0)
   const [ShowInfluencerProfile, setShowInfluencerProfile] = useState(0)
 
-
-  useLayoutEffect(() => {
-
-    setShowInbox(0)
-
-  })
-
-  useEffect(() => {
-
-
-    return () => {
-      setShowInbox(1)
-    }
-  })
 
 
 

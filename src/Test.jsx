@@ -58,4 +58,71 @@ function Test() {
   );
 }
 
+const leftside = (params) => {
+  <div className="col-span-4 border-r-[1px] pr-2 h-screen ml-2">
+
+  {/* Top Search */}
+
+  <div className="flex  justify-center mt-5 sm:mt-5 sm:justify-between items-center     ">
+    <div className="  ">
+      <div className="flex items-center  w-[250px]  sm:w-[180px]     mdm:w-[200px] lg:w-[250px]  relative">
+        <img className="size-[20px]  absolute top-3 left-2" src="/Svg/SearchIcon.svg" alt="" />
+        <input className="outline-0  bg-none w-full  h-[40px]   bg-black/5 rounded-lg pl-9" type="text" placeholder="Search" />
+      </div>
+    </div>
+    <div className="OrangeButtonWithText-v3 fixed bottom-10 right-10 sm:bottom-0 sm:right-0 sm:relative  sm:size-[30px] mdm:size-[40px]    flex items-center  cursor-pointer justify-center"><p className=" text-2xl">+</p></div>
+
+  </div>
+
+  {/* Influencer list  */}
+  <div className="ml-10 mr-2 mt-5">
+    <p className="poppins-semibold text-[15px]">Member</p>
+    <InfluncerMessage Image={"p1.jpg"} Name="Rizwan" Time="12:00 AM" Message="hi" Unread="2"  
+    
+    onClick={() => {
+      setShowMessage(1)
+    }
+    }
+    />
+    <InfluncerMessage Image={"p6.jpg"} Name="Sana" Time="1:00 PM" Message="Now I am here" Unread={0} />
+    <InfluncerMessage Image={"p7.jpg"} Name="Ali" Time="06:00 PMz" Message="OK! its done" Unread="5" />
+
+  </div>
+
+</div>
+
+}
+
+
+
+const RightSide = (params) => {
+  <div className=" hidden sm:block  col-span-8">
+
+  {/* Wrrapper */}
+  <div className="mx-2 relative">
+
+    {/* Top Header Name of Reciver  */}
+
+    <div className=' hidden sm:flex   text-[9px] sm:text-[10px] mdm:text-[12px]'>
+
+      <img className='size-[40px] Avatar' src={`/Media/p1.jpg`} alt="" />
+      <div className=' flex flex-1 flex-col  ml-2'>
+        <div className='flex flex-1 justify-between  items-center'>
+          <p className='poppins-semibold '> Rizwan Sabir</p>
+        </div>
+        <div className='flex  ml-1   text-black/70 text-[10px]  items-center gap-1'>
+          <div className="size-[6px] rounded-full bg-green-500"></div>
+          <p>online</p>
+        </div>
+
+      </div>
+    </div>
+    <Test />
+
+
+  </div>
+
+</div>
+}
+
 export default Test;

@@ -39,13 +39,13 @@ const MainBar = () => {
           <Route path="Influencers" element={<Influencers />} />
           <Route path="Media" element={<Media />} />
         </Route>
-        <Route path="/Search" element={<Search />} />
+        <Route path="Search" element={<Search />} />
 
-        <Route  path="/Compaign" element={< Compaign/>} />
+        <Route  path="Compaign" element={< Compaign/>} />
         
         
 
-        <Route path="/Compaign/CurrentCompaign"  element={< CurrentCompaign/>} >
+        <Route path="Compaign/CurrentCompaign"  element={< CurrentCompaign/>} >
         <Route index  element={< Dashbaord/>} />
           <Route path="Workflow"  element={< Workflow/>} />
           <Route path="Payment" element={<Payment />} />
@@ -56,9 +56,9 @@ const MainBar = () => {
   
 
 
-        <Route path="/Saved" element={<Saved />} />
+        <Route path="Saved" element={<Saved />} />
 
-        <Route path="/Blog" element={<Main />} >
+        <Route path="Blog" element={<Main />} >
         
         <Route index  element={< Blog/>} />
         <Route path="CreateBlog"  element={< CreateBlog/>} />
@@ -66,8 +66,8 @@ const MainBar = () => {
 
 
 
-        <Route path="/Message" element={<Message />} />
-        <Route path="/Info" element={<Info />} />
+        <Route path="Message" element={<Message />} />
+        <Route path="Info" element={<Info />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
     </div>

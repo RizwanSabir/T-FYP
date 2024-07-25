@@ -1,14 +1,10 @@
 import { useState, useMemo, useContext } from 'react'
 import LeftSideBar from './DashBoard/LeftSideBar.jsx/LeftSideBar';
-import RightSideBar from './DashBoard/RightSideBar/RightSideBar';
 import TopHeader from './DashBoard/TopHeader';
 
 import HiddenSideBar from './DashBoard/HiddenSideBar';
-import { MyContext } from '../../Hooks/Context/ShowInboxContext';
 import MiddlePart from './DashBoard/MainBar.jsx/MiddlePart';
 
-import ShowInbox from '../../Hooks/ShowInbox';
-import CurrentPage from '../../Hooks/CurrentPage';
 
 const BrandDashBoardTemplate = ({ CustomButtons, IconNames, Pages, menuItems, children }) => {
 
@@ -52,11 +48,9 @@ passed the state varibles to Hidden and top header
 
 
             {/* Whether to show the Inbox or not Like in /Search we donot want to show the Inbox  */}
-            <ShowInbox>
 
               <MiddlePart>{children}</MiddlePart>
 
-            </ShowInbox>
 
           </div>
 

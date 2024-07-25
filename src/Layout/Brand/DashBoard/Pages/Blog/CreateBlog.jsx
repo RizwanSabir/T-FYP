@@ -1,22 +1,12 @@
 import {useLayoutEffect,useEffect,useContext} from 'react'
-import { MyContext } from '../../../../../Hooks/Context/ShowInboxContext';
 const CreateBlog = () => {
-    const { setShowInbox } = useContext(MyContext);
 
-    useLayoutEffect(() => {
-        setShowInbox(0)
-      })
-    
-      useEffect(() => {
-        return () => {
-          setShowInbox(1)
-        }
-      })
+  
 
   return (
   <>
   
-  <div className=" px-5   sm:w-[600px]  mdm:w-[700px]   lg:w-[1000px] mx-auto text-[9px] xs:text-[10px] sm:text-[13px] md:text-[11px] ">
+  <div className=" px-5   sm:w-[600px]  mdm:w-[700px]   lg:w-[1000px] mx-auto text-[9px] xs:text-[10px] sm:text-[13px] md:text-[11px]  h-screen">
 
 <div className="flex justify-between pt-5">
     <p className="poppins-semibold text-xl">Blog Posts</p>

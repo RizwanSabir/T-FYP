@@ -1,23 +1,12 @@
 import { useContext, useLayoutEffect, useEffect, } from 'react';
-import { MyContext } from '../../../../../Hooks/Context/ShowInboxContext';
 import {Outlet, useNavigate} from 'react-router-dom';
 import {useState} from 'react'; 
 import {motion} from 'framer-motion';
 import { DropdownSvg } from '../../../../../Components/Svg/DropDownSvg';
 const CurrentCompaign = () => {
 
-    const { setShowInbox } = useContext(MyContext);
 
-  useLayoutEffect(() => {
-    setShowInbox(0)
-  })
-
-  useEffect(() => {
-    return () => {
-      setShowInbox(1)
-    }
-  })
-
+ 
   let pages=[['Compaign',''],['Workflow','Workflow'],['Content','Content'],['Payment','Payment'],['Report','Report']]
   const navItems = ['Compaign', 'Workflow', 'Content', 'Payment','Report'];
 

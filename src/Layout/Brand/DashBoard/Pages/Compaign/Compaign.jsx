@@ -1,30 +1,15 @@
 
-import { useContext, useLayoutEffect, useEffect, } from 'react';
-import { MyContext } from '../../../../../Hooks/Context/ShowInboxContext';
 import { useNavigate } from 'react-router-dom';
-import ScreenSizeDisplay from '../../../../../useCurrentScreenSize';
 
 const Compaign = () => {
-  const { setShowInbox } = useContext(MyContext);
   const navigate = useNavigate();
 
-  useLayoutEffect(() => {
 
-    setShowInbox(0)
-
-  })
-
-  useEffect(() => {
-
-
-    return () => {
-      setShowInbox(1)
-    }
-  })
+ 
   return (
     <>
       {/* Top bar total posted ,active comapign */}
-      <div className="pt-5 w-[300px] sm:w-[500px] mdm:w-[700px] mx-auto ">
+      <div className="pt-5 w-[300px] sm:w-[500px] mdm:w-[700px] mx-auto  h-screen">
 
         {/* Information bar of whole campaign */}
 
