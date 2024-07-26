@@ -10,7 +10,7 @@
     
     /* Style for the scrollbar track */
     .scroll-container-v1::-webkit-scrollbar {
-      width: 100px;
+      width: 10px;
       height: 12px; /* Width of the scrollbar */
       background-color: rgb(255, 255, 255); /* Background color of the scrollbar track */
     }
@@ -18,7 +18,6 @@
     /* Style for the scrollbar thumb */
     .scroll-container-v1::-webkit-scrollbar-thumb {
       background-color:  #ffffff;/* Color of the scrollbar thumb */
-      border-radius:  9999px; /* Rounded corners of the scrollbar thumb */
       /* border: 3px solid #f97316; Optional: Border for the scrollbar thumb */
       border: 10px solid #d7b49a; /* Optional: Border for the scrollbar thumb */
     }

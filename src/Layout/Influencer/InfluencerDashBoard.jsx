@@ -17,7 +17,8 @@ import SearchIcon from '../../Components/Svg/SearchIcon';
 import MainBar from './MainBar';
 
 
-const BrandDashBoard = () => {
+
+const InfluencerDashBoard = () => {
 
   // const navigate=useNavigate()
   //   useEffect(() => {
@@ -38,18 +39,18 @@ const BrandDashBoard = () => {
 
     // Used to display the Icon and Its name on Hover and when Click address
     //image ,name hover,link 
-    let IconNames = [['HomeIcon', 'Dashboard', '/Dashboard'], ['Compaign', 'Compaign', 'Compaign'], ['Saved', 'Your Network', 'Saved'], ['Blog', 'Blog Posts', 'Blog'], ['message', 'Message', 'Message']]
+    let IconNames = [['HomeIcon', 'Dashboard', '/Dashboard/OverView'], ['Dollar', 'Brand Deals', '/BrandDeals'], ['Work', 'Brand Work', '/BrandWork/WD'], ['Blog', 'Blog Posts', 'Blog'], ['message', 'Message', 'Message']]
 
     // It will navigate the page upon the user itself add URL orr by navigate funtion when user Click 
     // It will the Active Button according to 0,1,2,3,4,5,6
-    let Pages = ['/Dashboard', '/Compaign', '/Saved', '/Blog', '/Message', '/Search', '/Info']
+    let Pages = ['/Dashboard', '/BrandDeals', '/BrandWork', '/Blog', '/Message', '/Search', '/Info']
 
 
     let menuItems = [
       { icon: <SearchIcon color="white" />, label: 'Search', navigate: "/Search" },
       { icon: <HomeIcon color="white" />, label: 'Dashboard', navigate: "/Dashboard" },
-      { icon: <CompaignIcon color="white" />, label: 'Compaign', navigate: "/Compaign" },
-      { icon: <SavedIcon color="white" />, label: 'Saved Network', navigate: "/Saved" },
+      { icon: <CompaignIcon color="white" />, label: 'Brand Deals', navigate: "/BrandDeals" },
+      { icon: <SavedIcon color="white" />, label: 'Brand Work', navigate: "/BrandWork" },
       { icon: <GroupIcon color="white" />, label: 'Blog Posts', navigate: "/Blog" },
       { icon: <Message color="white" />, label: 'Message', navigate: "/Message" },
       { icon: <HelpIcon color="white" />, label: 'Help', navigate: "/Info" },
@@ -72,4 +73,4 @@ const BrandDashBoard = () => {
   )
 }
 
-export default BrandDashBoard
+export default InfluencerDashBoard
