@@ -7,7 +7,13 @@ import NavBarItems from '../../../../../Components/NavBar/NavBarItems';
 import RightSideBar from '../../../../../Components/DashBoardTemplate/DashBoard/RightSideBar/RightSideBar';
 
 const Home = () => {
+  const navigate=useNavigate()
+
+useEffect(() => {
+  navigate('/Dashboard/OverView')
+
  
+}, [])
 
 
   const navItems = ['Overview', 'Audience', 'Engagement', 'Influencers', 'Media'];
