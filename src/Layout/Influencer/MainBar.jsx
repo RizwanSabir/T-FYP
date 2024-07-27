@@ -19,6 +19,7 @@ import WorkOverView from './Dashboard/Pages/BrandWork/WorkOverView';
 import WorkDetails from './Dashboard/Pages/BrandWork/WorkDetails';
 import WorkContent from './Dashboard/Pages/BrandWork/WorkContent';
 import WD from './Dashboard/Pages/BrandWork/WD';
+import Main from './Dashboard/Pages/Blog/Main';
 
 
 
@@ -65,7 +66,7 @@ const MainBar = () => {
           <Route path="Content" element={<WorkContent />} />
         </Route>
 
-        <Route path="Blog" element={<Blog />} >
+        <Route path="Blog" element={<Main />} >
 
           <Route index element={< Blog />} />
           <Route path="CreateBlog" element={< CreateBlog />} />

@@ -39,7 +39,7 @@ const InfluencerDashBoard = () => {
 
     // Used to display the Icon and Its name on Hover and when Click address
     //image ,name hover,link 
-    let IconNames = [['HomeIcon', 'Dashboard', '/Dashboard/'], ['Dollar', 'Brand Deals', '/BrandDeals'], ['Work', 'Brand Work', '/BrandWork/WD'], ['Blog', 'Blog Posts', 'Blog'], ['message', 'Message', 'Message']]
+    let IconNames = [['HomeIcon', 'Dashboard', '/Dashboard'], ['Dollar', 'Brand Deals', '/BrandDeals'], ['Work', 'Brand Work', '/BrandWork/WD'], ['Blog', 'Blog Posts', 'Blog'], ['message', 'Message', 'Message']]
 
     // It will navigate the page upon the user itself add URL orr by navigate funtion when user Click 
     // It will the Active Button according to 0,1,2,3,4,5,6

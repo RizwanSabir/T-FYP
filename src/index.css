@@ -395,6 +395,20 @@
   
 }
 
+.GreenColor{
+  color:#1ce14a;
+}
+
+.BlueColor{
+  color: #3e6def ;
+}
+.LightPurishColor{
+  color:#2D9197;
+}
+
+.OrangeColor{
+  color: #FB773F ;
+}
 
 .GreenButtonWithText-v1{
   border-color: #1ce14a;
@@ -412,6 +426,19 @@
   
 }
 
+.GreenButtonWithText-v3{
+  border-color: #1ce14a;
+  color:#1ce14a;
+  @apply border-[1px] lato-regular   rounded-2xl 
+  
+}
+.LightPurish{
+  border-color: #2D9197;
+  color:#2D9197;
+  @apply border-[1px] lato-regular   rounded-2xl 
+  
+}
+
 .BlueButtonWithText{
   border-color: #3e6def;
   color: #3e6def ;
@@ -425,6 +452,12 @@
   @apply border-[1px] lato-regular   rounded-2xl xs:px-6 xs:py-3  px-3 py-1  
   
 }
+.BlueButtonWithText-v2{
+  border-color: #3e6def;
+  color: #3e6def ;
+  @apply border-[1px] lato-regular   rounded-2xl 
+  
+}
 
 .OrangeButtonBorder{
   border-color: #FB773F;
@@ -435,6 +468,12 @@
 .OrangeButtonBorder-v1{
   border-color: #FB773F;
   @apply border-[1px] lato-regular   rounded-2xl xs:px-6 xs:py-3  px-3 py-1
+   
+}
+.OrangeButtonBorder-v2{
+  border-color: #FB773F;
+  color: #FB773F ;
+  @apply border-[1px] lato-regular   rounded-2xl 
    
 }
 
