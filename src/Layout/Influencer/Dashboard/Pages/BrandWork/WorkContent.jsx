@@ -15,7 +15,6 @@ const WorkContent = () => {
         <div className="flex gap-x-3  items-center">
           <img src="/Svg/BackButton.svg" alt="" />
           <p className="text-black/50 poppins-semibold">Back</p>
-          <ScreenSizeDisplay/>
         </div>
 
         <div className="mt-5 ml-10">

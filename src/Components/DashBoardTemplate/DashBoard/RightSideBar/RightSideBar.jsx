@@ -1,7 +1,7 @@
 const RightSideBar = () => {
   return (
     <>
-       <div className="bg-white sm:hidden lg:block lg:col-span-3">
+       <div className="bg-white hidden lg:block lg:col-span-3">
        <div className={ `mx-5 sm:hidden lg:block  bg-white text-[9px] sm:text-[10px] mdm:text-[12px]  `}>
         <p className='poppins-semibold  text-lg'>Inbox</p>
 

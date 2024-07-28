@@ -5,6 +5,7 @@ import {useRef,useState,useEffect} from 'react';
 import  './index.css';
 import InfluRoutes from './Layout/Influencer/InfluencerRoutes';
 import InfluencerRoutes from './Layout/Influencer/InfluencerRoutes';
+import UserRoutes from './Layout/User/UserRoutes';
 
 const App = () => {
  
@@ -27,7 +28,10 @@ const App = () => {
 
 {/* {AnimationState ?   <SplashScreen/>:<BrandRoutes/>} */}
 
-{1?<InfluencerRoutes/> :<BrandRoutes/>}
+{/* {0?<InfluencerRoutes/> :<BrandRoutes/>} */}
+{1?<UserRoutes/> :<InfluencerRoutes/>}
+
+
 {/* <InfluencerDashBoard/> */}
 
 
