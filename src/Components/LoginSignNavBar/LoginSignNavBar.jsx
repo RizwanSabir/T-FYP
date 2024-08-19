@@ -4,13 +4,13 @@ import { motion } from "framer-motion"
 const LoginSignNavBar = ({User,setUser}) => {
 
  
-  let users = [['Brand','SignUpBrandPage1'], ['Influencer','SignUpinfluencerPage1'], ['User','SignUpUserPage1']]
+  let users = [['Brand','Brand'], ['Influencer','influencer'], ['User','User']]
   
   return (
     <>
 
-      <div className="flex flex-row justify-center mt-5">
-        <div className="flex flex-row bgColor h-[45px] w-full justify-around items-center rounded-3xl ">
+      <div className="flex flex-row justify-center mt-5 text-[8px] sm:text-[12px] w-[150px] xs:w-[200px] sm:w-[250px] mx-auto">
+        <div className="flex flex-row bgColor py-1 w-full justify-around items-center rounded-3xl ">
           {
             users.map((user) => {
               return (
@@ -35,10 +35,9 @@ const LoginSignNavBar = ({User,setUser}) => {
       </div>
 
 
-      <div className=" my-2  flex flex-row  justify-center  rounded-full  inputField hover:outline-none hover:ring-2 hover:ring-ring hover:ring-offset-2">
-
-        <img src="Svg/Gmail.svg" alt="" />
-        <button className="text-center ml-2 poppins-regular  "> Continue with google </button>
+      <div className=" my-1 sm:my-2     rounded-full   hover:outline-none hover:ring-2 hover:ring-ring hover:ring-offset-2 flex flex-row justify-center mt-5 text-[12px] w-[250px] mx-auto">
+        <img className="w-5" src="Svg/Gmail.svg" alt="" />
+        <p className=" ml-2 poppins-regular  text-[8px] sm:text-[12px] cursor-pointer"> Continue with google </p>
 
 
       </div>
@@ -49,16 +48,17 @@ const LoginSignNavBar = ({User,setUser}) => {
 
 const WhiteBackground = ({ user, setUser, children }) => {
   return (
-    <motion.button key={user} onMouseEnter={() => { setUser(user) }} className={ `poppins-regular px-2 py-1   relative z-30`}>
+    <motion.div key={user} onMouseEnter={() => { setUser(user) }} className={ `poppins-regular px-2 py-1   relative z-30 cursor-pointer` }>
       <h1 >{user[0]}</h1>
       {children}
 
 
-    </motion.button>
+    </motion.div>
   );
 };
 
-
+// E2e2e2
+// f7f7f5
 
 
 export default LoginSignNavBar

@@ -10,14 +10,14 @@ const Login = () => {
 
 
   return (
-    <div className='w-screen h-screen flex '>
+    <div className='w-screen h-screen flex text-10px'>
 
 
 
       <motion.div
-      layoutId='Logo'
-      
-      className='absolute top-1 z-20'>
+        layoutId='Logo'
+
+        className='absolute top-1 z-20'>
         <Logo />
       </motion.div>
       {/* Left hand Side  */}
@@ -26,15 +26,15 @@ const Login = () => {
       {!IsSignUp && <div className='w-8/12 border-2 border-green-300  flex flex-col  justify-center '>
 
 
-        <p className='text-center text-2xl poppins-semibold '>Login</p>
+        <p className='text-center  poppins-semibold '>Login</p>
         <div className="w-full  ">
           <div className="p-4">
 
-
+          <LoginSignNavBar User={User} setUser={setUser} />
             <div className='w-8/12 mx-auto'>
 
 
-              <LoginSignNavBar User={User} setUser={setUser} />
+              
               <div className='my-2'>
                 <p className='poppins-light '>Email</p>
                 <input type="email" name="" className='inputField rounded-md' id="" />
@@ -45,14 +45,14 @@ const Login = () => {
                 <input type="password" name="" className='inputField rounded-md' id="" />
 
               </div>
-              <p className='text-sm poppins-extralight'>Use 8 or more characters with a mix of letters, numbers & symbols</p>
+              <p className=' poppins-extralight'>Use 8 or more characters with a mix of letters, numbers & symbols</p>
 
-              <button className='Button h-11 rounded-md px-8 my-2'>Login</button>
+              <button className='Button  rounded-md '>Login</button>
 
-              <p className='poppins-light text-sm my-1'>Create an account? <a onClick={() => {
+              <p className='poppins-light  my-1'>Create an account? <a onClick={() => {
                 setIsSignUp(true)
               }} href='#' className='underline'>Sign Up </a>  </p>
-              <a href='#' className='poppins-light text-sm underline'>Forget Password</a>
+              <a href='#' className='poppins-light  underline'>Forget Password</a>
             </div>
 
 
@@ -69,30 +69,35 @@ const Login = () => {
 
         layout
 
-        className={` ${!IsSignUp ? 'w-6/12 backgroundPicture' : 'w-5/12 bgSignUp '}   flex flex-col items-center justify-center relative relative`}>
+        className={` ${!IsSignUp ? ' backgroundPicture' : ' bgSignUp '}   w-6/12 flex flex-col  justify-center relative `}>
         <MotionConfig transition={{ duration: 0.5 }}>
 
-         
+        <div className="flex w-full h-full items-center  absolute top-0 " >
+                          <img className=" " src="L2.jpg" alt="" />
+                      </div>
 
 
-        <>   <motion.div layout="position"
-            layoutId='1'
 
-            className='w-[300px] h-[400px] border-2  glassDiv  text-white  poppins-medium text-2xl rounded-3xl' >
-           <p className='p-5'>Very good <br />
-              works are <br />
-              waiting for
-              you <br /> {!IsSignUp ? 'Login Now !!!' : "Sign Up Now!!!"} </p>
-        
-          </motion.div>
-           <motion.img
+          {/* <>
+            <motion.div layout="position"
+              layoutId='1'
+
+              className='w-[300px] h-[400px] border-2  glassDiv  text-white  poppins-medium text-2xl rounded-3xl' >
+              <p className='p-5'>Very good <br />
+                works are <br />
+                waiting for
+                you <br /> {!IsSignUp ? 'Login Now !!!' : "Sign Up Now!!!"} </p>
+
+            </motion.div>
+
+            <motion.img
 
 
 
               className=' w-[600px]  absolute ' src="Images/WomenLogin.png" alt="" />
-</>
+          </> */}
 
-          
+
 
 
         </MotionConfig>
@@ -140,7 +145,7 @@ const Login = () => {
                 <button className='Button h-11 rounded-md px-8 my-2'>Sign Up</button>
 
                 <p className='poppins-light text-sm my-1'>Already have an account? <a href='#' onClick={() => {
-                   setIsSignUp(false)
+                  setIsSignUp(false)
                 }} className='underline'>Login </a>  </p>
                 <a href='#' className='poppins-light text-sm underline'>Forget Password</a>
               </div>

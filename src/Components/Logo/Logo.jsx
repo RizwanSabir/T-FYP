@@ -4,7 +4,7 @@ const Logo = () => {
     <>
     
     
-    <img src="LogoSite.svg" alt="" />
+    <img className="bg-transparent" src="LogoSite.svg" alt="" />
     
     </>
   )
