@@ -29,7 +29,11 @@ function Authentication() {
   console.log("Authentication is Called");
 
   return (
-    component 
+    component || ( <>
+    <div>
+      Front Page is Under-Construction .Please proceed to <a  className='Button poppins-regular rounded-md  py-[5px] md:py-[6px] text-[12px] px-5 cursor-pointer' href="/Login">Login</a>
+    </div>
+    </>)
     // component || (
     //   <Routes>
         
